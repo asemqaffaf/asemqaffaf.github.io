@@ -42,8 +42,7 @@ export default function Card({
               width={150}
               height={150}
               className="text-zinc-500"
-              src={`/asemqaffaf.github.io${profilePic}`}
-              // src="/asemqaffaf.github.io/vercel.svg"
+              src={`${profilePic}`}
               alt={name}
               priority
             />

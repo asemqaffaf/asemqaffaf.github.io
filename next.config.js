@@ -1,8 +1,8 @@
 // @ts-check
 
-const repo = "asemqaffaf.github.io";
-const assetPrefix = `/${repo}/`;
-const basePath = `/${repo}`;
+// const repo = "asemqaffaf.github.io";
+// const assetPrefix = `/${repo}/`;
+// const basePath = `/${repo}`;
 
 /**
  * @type {import('next').NextConfig}
@@ -33,9 +33,9 @@ const nextConfig = {
   //  *
   //  * @see https://nextjs.org/docs/pages/api-reference/components/image#unoptimized
   //  */
-  // images: {
-  //   unoptimized: true,
-  // },
+  images: {
+    unoptimized: true,
+  },
 
   // assetPrefix,
   // basePath,
