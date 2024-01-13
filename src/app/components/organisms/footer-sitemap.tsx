@@ -18,7 +18,7 @@ export function FooterWithSitemap() {
           <div className="mb-6 flex flex-col md:mb-0">
             <Link href="/">
               <span className="self-center whitespace-nowrap text-2xl font-semibold text-gray-500 duration-1000 hover:text-gray-900 dark:hover:text-white">
-                simpleasy
+                asemqaffaf
               </span>
             </Link>
             <Link
@@ -28,12 +28,8 @@ export function FooterWithSitemap() {
             >
               <div className="my-5 mb-1 flex flex-col font-light text-gray-500 duration-700  hover:text-black dark:text-gray-400   dark:hover:text-white">
                 <span className="mb-1">Tokyo Head Office</span>
-                <span className=" mb-1">
-                  22th floor, SHIBUYA MARK CITY, 1-12-1 Dogenzaka,
-                </span>
-                <span className=" md:flex">
-                  Shibuya-ku,Tokyo 153-0043 Japan
-                </span>
+                <span className=" mb-1">Akasaka</span>
+                <span className=" md:flex">Minato City, Tokyo Japan</span>
               </div>
             </Link>
             <Link
@@ -43,12 +39,8 @@ export function FooterWithSitemap() {
             >
               <div className="my-5 mb-1 flex flex-col font-light text-gray-500 duration-700  hover:text-black dark:text-gray-400   dark:hover:text-white">
                 <span className="mb-1">Shibuya Office</span>
-                <span className=" mb-1">
-                  306 Central-Haitsu, 13-4 Nanpeidaicho,
-                </span>
-                <span className="md:flex">
-                  Shibuya-ku, Tokyo 150-0036 Japan
-                </span>
+                <span className=" mb-1">Shinjuku Station</span>
+                <span className="md:flex">Shibuya-ku, Tokyo, Japan</span>
               </div>
             </Link>
           </div>
@@ -167,7 +159,7 @@ export function FooterWithSitemap() {
         <hr className="my-6 border-gray-200 sm:mx-auto lg:my-8 dark:border-gray-700" />
         <div className="flex flex-col-reverse items-center  sm:flex sm:items-center sm:justify-between md:flex md:flex-row md:items-start">
           <span className="mb-5 text-sm text-gray-500 sm:text-center md:mb-0 dark:text-gray-400">
-            © {new Date().getFullYear()} simpleasy, inc. All Rights Reserved.
+            © {new Date().getFullYear()} asemqaffaf, inc. All Rights Reserved.
           </span>
           <div className="mt-4 flex flex-col items-center sm:mt-0 sm:flex-row sm:items-start sm:justify-center ">
             <Link

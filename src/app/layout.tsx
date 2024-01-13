@@ -6,7 +6,7 @@ import type { Metadata } from "next";
 // import Footer from './components/pages/footer';
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://simpleasy.com"),
+  metadataBase: new URL("https://asemqaffaf.com"),
   alternates: {
     canonical: "/",
     languages: {
@@ -24,16 +24,16 @@ export const metadata: Metadata = {
 
 // export const metadata: Metadata = {
 //   title: {
-//     default: 'simpleasy.com',
-//     template: '%s | simpleasy.com',
+//     default: 'asemqaffaf.com',
+//     template: '%s | asemqaffaf.com',
 //   },
 //   openGraph: {
-//     title: 'simpleasy.com',
-//     url: 'https://simpleasy.com',
-//     siteName: 'simpleasy.com',
+//     title: 'asemqaffaf.com',
+//     url: 'https://asemqaffaf.com',
+//     siteName: 'asemqaffaf.com',
 //     // images: [
 //     //   {
-//     //     url: 'https://simpleasy.com/og.png',
+//     //     url: 'https://asemqaffaf.com/og.png',
 //     //     width: 1920,
 //     //     height: 1080,
 //     //   },

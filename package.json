@@ -1,5 +1,5 @@
 {
-  "name": "simpleasy",
+  "name": "asem-qaffaf",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -12,7 +12,8 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --collect-coverage",
     "prepare": "husky install",
-    "prepare:config": "husky install .config/husky"
+    "prepare:config": "husky install .config/husky",
+    "format:fix": "prettier --write ."
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.5.1",

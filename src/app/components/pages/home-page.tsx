@@ -14,9 +14,7 @@ export default function HomePage() {
       />
 
       <h1 className="text-edge-outline z-10 animate-title cursor-default whitespace-nowrap bg-white bg-clip-text p-[2%] font-display text-4xl text-transparent duration-1000  sm:text-6xl md:text-9xl">
-        {/* simpleかつeasyに、 */}
-        しんぷりーじー
-        {/* simpleasy */}
+        Asem Qaffaf
       </h1>
 
       <div className="animate-glow hidden h-1 w-screen animate-fade-right bg-gradient-to-r from-[grey] via-[white] to-[grey] md:block" />

@@ -1,7 +1,7 @@
 export const employeeList = [
   {
     name: "Asem Qaffaf",
-    postion: "Software Engineer",
+    postion: "Co Founder, CTO",
     profilePic: "/images/asem.png",
     flagUrl: "/images/jordan-flag.png",
     country: "Jordan",
