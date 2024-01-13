@@ -14,7 +14,7 @@
     "jsx": "preserve",
     "incremental": true,
     "typeRoots": ["node_modules/@types"],
-    "types": ["jasmine", "node"],
+    "types": ["jest", "node"],
     "plugins": [
       {
         "name": "next"
