@@ -15,12 +15,17 @@ const nextConfig = {
   //  */
   output: "export",
 
+  // trailingSlash: true,
+  // skipTrailingSlashRedirect: true,
+
+  // distDir: "dist",
+
   // /**
   //  * Set base path. This is usually the slug of your repository.
   //  *
   //  * @see https://nextjs.org/docs/app/api-reference/next-config-js/basePath
   //  */
-  // // basePath: "/asemqaffaf.github.io",
+  // basePath: "/asemqaffaf.github.io",
 
   // /**
   //  * Disable server-based image optimization. Next.js does not support
@@ -32,8 +37,8 @@ const nextConfig = {
   //   unoptimized: true,
   // },
 
-  assetPrefix,
-  basePath,
+  // assetPrefix,
+  // basePath,
 };
 
 module.exports = nextConfig;

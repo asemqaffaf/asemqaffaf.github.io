@@ -6,7 +6,7 @@ import React, { useState } from "react";
 interface ICardProps {
   name: string;
   postion: string;
-  // profilePic: string;
+  profilePic: string;
   flagUrl: string;
   country: string;
 }
@@ -14,7 +14,7 @@ interface ICardProps {
 export default function Card({
   name,
   postion,
-  // profilePic,
+  profilePic,
   flagUrl,
   country,
 }: ICardProps) {
@@ -42,8 +42,8 @@ export default function Card({
               width={150}
               height={150}
               className="text-zinc-500"
-              // src={`${profilePic}`}
-              src="/nextjs-github-pages/vercel.svg"
+              src={`/asemqaffaf.github.io${profilePic}`}
+              // src="/asemqaffaf.github.io/vercel.svg"
               alt={name}
               priority
             />
