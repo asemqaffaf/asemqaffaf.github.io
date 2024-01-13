@@ -1,5 +1,8 @@
-/** @type {import('next').NextConfig} */
 // @ts-check
+
+const repo = "asemqaffaf.github.io";
+const assetPrefix = `/${repo}/`;
+const basePath = `/${repo}`;
 
 /**
  * @type {import('next').NextConfig}
@@ -17,7 +20,7 @@ const nextConfig = {
    *
    * @see https://nextjs.org/docs/app/api-reference/next-config-js/basePath
    */
-  basePath: "/nextjs-github-pages",
+  // basePath: "/asemqaffaf.github.io",
 
   /**
    * Disable server-based image optimization. Next.js does not support
@@ -28,6 +31,9 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+
+  assetPrefix,
+  basePath,
 };
 
 module.exports = nextConfig;
