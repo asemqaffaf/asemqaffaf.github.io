@@ -41,7 +41,7 @@ export default function Card({
             <Image
               width={150}
               height={150}
-              className="text-zinc-500"
+              className="rounded-full"
               src={`${profilePic}`}
               alt={name}
               priority

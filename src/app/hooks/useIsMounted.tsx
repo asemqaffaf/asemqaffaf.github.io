@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { navigation } from "@/util/navigation";
+import { navigation } from "@/util/nav-navigation";
 
 const nameList = navigation.map((item) => item.name);
 

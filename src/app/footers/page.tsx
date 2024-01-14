@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import Footer from "../components/pages/footer";
+import Footer from "../components/organisms/footer";
 
 export default function Page() {
   return <Footer />;

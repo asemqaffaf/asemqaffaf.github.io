@@ -3,6 +3,8 @@ import "./globals.css";
 import { Inter } from "@next/font/google";
 import LocalFont from "@next/font/local";
 import type { Metadata } from "next";
+
+import Footer from "./components/organisms/footer";
 // import Footer from './components/pages/footer';
 
 export const metadata: Metadata = {
@@ -76,10 +78,14 @@ export default function RootLayout({
       <head>{/* <Analytics /> */}</head>
 
       <body
-        className={`bg-[#cdd968] ${process.env.NODE_ENV === "development" ? "debug-screens" : undefined}`}
+        // className={`bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% ${process.env.NODE_ENV === "development" ? "debug-screens" : undefined}`}
+        className="bg-white lg:items-center dark:bg-zinc-800"
       >
-        {children}
-        {/* <Footer /> */}
+        <div className="flex flex-col ">
+          {children}
+          <Footer />
+          {/* <Footer /> */}
+        </div>
       </body>
     </html>
   );

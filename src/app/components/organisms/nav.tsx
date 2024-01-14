@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import type { Dispatch, MouseEvent, SetStateAction } from "react";
 import React, { useState } from "react";
 
-import { navigation } from "@/util/navigation";
+import { navigation } from "@/util/nav-navigation";
 
 export default function Nav({
   setCurrentPage,
