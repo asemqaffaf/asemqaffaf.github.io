@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import ReactPageScroller from "react-page-scroller";
 
 import Footer from "./components/organisms/footer";
-import Nav from "./components/organisms/nav";
+// import Nav from "./components/organisms/nav";
 import Company from "./components/pages/company";
 import Contact from "./components/pages/contact";
 import HomePage from "./components/pages/home-page";
@@ -20,10 +20,10 @@ export default function App(): React.JSX.Element {
 
   return (
     <>
-      <Nav
+      {/* <Nav
         setCurrentPage={setCurrentPage}
         color={currentPage <= 1 ? "zinc-500" : "white"}
-      />
+      /> */}
       <ReactPageScroller
         renderAllPagesOnFirstRender={false}
         pageOnChange={handlePageChange}

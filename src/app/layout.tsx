@@ -8,6 +8,7 @@ import LocalFont from "@next/font/local";
 import { usePathname } from "next/navigation";
 
 import Footer from "./components/organisms/footer";
+import Nav from "./components/organisms/nav";
 // import Footer from './components/pages/footer';
 
 // export const metadata: Metadata = {
@@ -83,6 +84,7 @@ export default function RootLayout({
       <head>{/* <Analytics /> */}</head>
 
       <body className="bg-custom-gradient">
+        <Nav />
         <div className="flex flex-col ">
           {children}
           {pathname === "/" ? <div /> : <Footer />}
