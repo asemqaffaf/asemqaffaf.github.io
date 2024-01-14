@@ -353,7 +353,6 @@ export default function Nav() {
               role="menu"
               aria-orientation="vertical"
               aria-labelledby="menu-button"
-              tabindex="-1"
             >
               <div className="py-1" role="none">
                 {/* <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" --> */}
@@ -361,7 +360,6 @@ export default function Nav() {
                   href="/"
                   className="text-gray-700 block px-4 py-2 text-sm"
                   role="menuitem"
-                  tabindex="-1"
                   id="menu-item-0"
                 >
                   Account settings
@@ -370,7 +368,6 @@ export default function Nav() {
                   href="/"
                   className="text-gray-700 block px-4 py-2 text-sm"
                   role="menuitem"
-                  tabindex="-1"
                   id="menu-item-1"
                 >
                   Support
@@ -379,7 +376,6 @@ export default function Nav() {
                   href="/"
                   className="text-gray-700 block px-4 py-2 text-sm"
                   role="menuitem"
-                  tabindex="-1"
                   id="menu-item-2"
                 >
                   License
