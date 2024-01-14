@@ -1,28 +1,31 @@
+"use client";
+
 import "./globals.css";
 
 import { Inter } from "@next/font/google";
 import LocalFont from "@next/font/local";
-import type { Metadata } from "next";
+// import type { Metadata } from "next";
+import { usePathname } from "next/navigation";
 
 import Footer from "./components/organisms/footer";
 // import Footer from './components/pages/footer';
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://asemqaffaf.com"),
-  alternates: {
-    canonical: "/",
-    languages: {
-      "en-US": "/en-US",
-      "ja-JA": "/ja-JA",
-    },
-  },
-  openGraph: {
-    images: "/og-image.png",
-  },
-  icons: {
-    shortcut: "/favicon.png",
-  },
-};
+// export const metadata: Metadata = {
+//   metadataBase: new URL("https://asemqaffaf.com"),
+//   alternates: {
+//     canonical: "/",
+//     languages: {
+//       "en-US": "/en-US",
+//       "ja-JA": "/ja-JA",
+//     },
+//   },
+//   openGraph: {
+//     images: "/og-image.png",
+//   },
+//   icons: {
+//     shortcut: "/favicon.png",
+//   },
+// };
 
 // export const metadata: Metadata = {
 //   title: {
@@ -73,6 +76,8 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const pathname = usePathname();
+
   return (
     <html lang="en" className={[inter.variable, calSans.variable].join(" ")}>
       <head>{/* <Analytics /> */}</head>
@@ -83,8 +88,7 @@ export default function RootLayout({
       >
         <div className="flex flex-col ">
           {children}
-          <Footer />
-          {/* <Footer /> */}
+          {pathname === "/" ? <div /> : <Footer />}
         </div>
       </body>
     </html>

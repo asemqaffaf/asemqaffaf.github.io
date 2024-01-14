@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import ReactPageScroller from "react-page-scroller";
 
+import Footer from "./components/organisms/footer";
 import Nav from "./components/organisms/nav";
 import Company from "./components/pages/company";
 import Contact from "./components/pages/contact";
@@ -33,6 +34,7 @@ export default function App(): React.JSX.Element {
         <News currentPage={currentPage} />
         <Services currentPage={currentPage} />
         <Contact currentPage={currentPage} />
+        <Footer />
       </ReactPageScroller>
     </>
   );
