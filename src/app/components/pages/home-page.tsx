@@ -6,11 +6,12 @@ import Particles from "../atoms/particles";
 
 export default function HomePage() {
   return (
-    <div className="flex h-full w-screen flex-col items-center justify-center overflow-hidden bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%">
+    // <div className="flex h-full w-screen flex-col items-center justify-center overflow-hidden bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%">
+    <div className="flex h-full w-screen flex-col items-center justify-center overflow-hidden">
       <div className="animate-glow hidden h-1 w-screen animate-fade-right bg-gradient-to-r from-[grey] via-[white] to-[grey] md:block" />
       <Particles
         className="absolute inset-0 -z-10 animate-fade-in"
-        quantity={200}
+        quantity={22}
       />
 
       <h1 className="text-edge-outline z-10 animate-title cursor-default whitespace-nowrap bg-white bg-clip-text  font-display text-4xl text-transparent duration-1000  sm:text-6xl md:text-9xl">

@@ -11,6 +11,14 @@ module.exports = {
 
   theme: {
     extend: {
+      colors: {
+        "custom-purple1": "#453781",
+        "custom-purple2": "#493d7e",
+        "custom-blue": "#5c7989",
+        "custom-green1": "#73af8e",
+        "custom-green2": "#82e3ad",
+      },
+
       typography: {
         DEFAULT: {
           css: {
@@ -36,6 +44,8 @@ module.exports = {
       backgroundImage: {
         "gradient-radial":
           "radial-gradient(50% 50% at 50% 50%, var(--tw-gradient-stops))",
+        "custom-gradient":
+          "linear-gradient(90deg, rgba(69,55,129,1) 3%, rgba(73,61,126,1) 6%, rgba(92,121,137,1) 38%, rgba(115,175,142,1) 68%, rgba(130,227,173,1) 100%)",
       },
       animation: {
         "fade-in": "fade-in 3s ease-in-out forwards",
