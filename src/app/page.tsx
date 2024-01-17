@@ -1,7 +1,10 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useCallback, useContext } from "react";
 import ReactPageScroller from "react-page-scroller";
+import { useSignalValue } from "signals-react-safe";
+
+import { AppState } from "@/hooks/signalsContext";
 
 import Footer from "./components/organisms/footer";
 // import Nav from "./components/organisms/nav";
@@ -12,30 +15,28 @@ import News from "./components/pages/news";
 import Services from "./components/pages/services";
 
 export default function App(): React.JSX.Element {
-  const [currentPage, setCurrentPage] = useState<number>(0);
+  const appState = useContext(AppState);
+  const navStateValue = useSignalValue(appState);
 
-  const handlePageChange = (number: number) => {
-    setCurrentPage(number);
-  };
+  const handlePageChange = useCallback(
+    (navNumber: number) => {
+      appState.value = { currentNav: appState.value.currentNav, navNumber };
+    },
+    [appState],
+  );
 
   return (
-    <>
-      {/* <Nav
-        setCurrentPage={setCurrentPage}
-        color={currentPage <= 1 ? "zinc-500" : "white"}
-      /> */}
-      <ReactPageScroller
-        renderAllPagesOnFirstRender={false}
-        pageOnChange={handlePageChange}
-        customPageNumber={currentPage}
-      >
-        <HomePage />
-        <Company currentPage={currentPage} />
-        <News currentPage={currentPage} />
-        <Services currentPage={currentPage} />
-        <Contact currentPage={currentPage} />
-        <Footer />
-      </ReactPageScroller>
-    </>
+    <ReactPageScroller
+      renderAllPagesOnFirstRender={false}
+      pageOnChange={handlePageChange}
+      customPageNumber={navStateValue.navNumber}
+    >
+      <HomePage />
+      <Company />
+      <News />
+      <Services shouldMount={navStateValue.navNumber === 3} />
+      <Contact />
+      <Footer homeScreen />
+    </ReactPageScroller>
   );
 }

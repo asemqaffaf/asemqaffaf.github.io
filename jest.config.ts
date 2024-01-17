@@ -11,14 +11,13 @@ const config: Config = {
   bail: 1,
   verbose: true,
   coverageProvider: "v8",
-  testEnvironment: "jsdom",
+  // testEnvironment: "jsdom",
 
   preset: "ts-jest",
   transform: { "^.+\\.ts?$": "ts-jest" },
   clearMocks: true,
   collectCoverage: true,
   coverageDirectory: "coverage",
-  // testEnvironment: "jest-environment-node",
   // Add more setup options before each test is run
   // setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
 };

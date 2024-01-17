@@ -1,4 +1,7 @@
-export default {};
+// export default {};
+
+// BUSINESS
+// Blog
 
 export const navigation = [
   // news should be -> About

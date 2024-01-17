@@ -5,18 +5,18 @@ import React, { useState } from "react";
 
 interface ICardProps {
   name: string;
-  postion: string;
+  brief: string;
   profilePic: string;
   flagUrl: string;
-  country: string;
+  lastWord: string;
 }
 
 export default function Card({
   name,
-  postion,
+  brief,
   profilePic,
   flagUrl,
-  country,
+  lastWord,
 }: ICardProps) {
   const [hover, setHover] = useState<boolean>(false);
 
@@ -34,7 +34,7 @@ export default function Card({
               backgroundImage: `url("${flagUrl}")`,
               clipPath: hover
                 ? "circle(100% at 100%)"
-                : "circle(150px at 80% 20%)",
+                : "circle(150px at 80% 15%)",
             }}
           />
           <div className="card-imgBx">
@@ -47,13 +47,13 @@ export default function Card({
               priority
             />
           </div>
-          <div className="card-contentBx">
-            <h2>{name}</h2>
+          <div className="card-contentBx ">
+            <h2 className="my-10">{name}</h2>
             <div className="card-size">
-              <h3>{postion}</h3>
+              <p className="font-light text-zinc-100">{brief}</p>
             </div>
             <div className="card-color">
-              <h3>{country}</h3>
+              <p className="text-zinc-100">{lastWord}</p>
             </div>
           </div>
         </div>

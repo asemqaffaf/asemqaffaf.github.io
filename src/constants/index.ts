@@ -1,38 +1,11 @@
 export const employeeList = [
   {
     name: "Asem Qaffaf",
-    postion: "Co Founder, CEO",
+    brief:
+      "As a Senior Software Engineer with extensive experience in Japan, Europe, and the USA, I excel in delivering innovative solutions using my strong JavaScript skills. Known for exceptional organization and self-motivation, I am deeply committed to making a positive impact in the tech industry, consistently striving for excellence and significantly contributing to the field of software engineering.",
     profilePic: "/images/asem.png",
     flagUrl: "/images/jordan-flag.png",
-    country: "",
-  },
-  {
-    name: "Diego Bittencourt Mendes",
-    postion: "Software Engineer",
-    profilePic: "/images/diego.png",
-    flagUrl: "/images/brazil.png",
-    country: "Brazil",
-  },
-  {
-    name: "Adil Amjad",
-    postion: "Software Engineer",
-    profilePic: "/images/adil.png",
-    flagUrl: "/images/pakistan.png",
-    country: "Pakistan",
-  },
-  {
-    name: "Shuntaro Tashiro",
-    postion: "Tech Lead / PM",
-    profilePic: "/images/shun.png",
-    flagUrl: "/images/japan.png",
-    country: "Japan",
-  },
-  {
-    name: "Chigoziem Nwaiwu",
-    postion: "Software Engineer",
-    profilePic: "/images/prince.png",
-    flagUrl: "/images/nigeria.png",
-    country: "Nigeria",
+    lastWord: "Thank you!",
   },
 ] as const;
 

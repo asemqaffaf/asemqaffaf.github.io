@@ -7,6 +7,8 @@ import LocalFont from "@next/font/local";
 // import type { Metadata } from "next";
 import { usePathname } from "next/navigation";
 
+import { AppState, navState } from "@/hooks/signalsContext";
+
 import Footer from "./components/organisms/footer";
 import Nav from "./components/organisms/nav";
 // import Footer from './components/pages/footer';
@@ -78,17 +80,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
-
+  // const navStateValue = useSignalValue(navState);
+  // console.log("navStateValue :>> ", navStateValue);
   return (
     <html lang="en" className={[inter.variable, calSans.variable].join(" ")}>
       <head>{/* <Analytics /> */}</head>
 
       <body className="bg-custom-gradient">
-        <Nav />
-        <div className="flex flex-col ">
-          {children}
-          {pathname === "/" ? <div /> : <Footer />}
-        </div>
+        <AppState.Provider value={navState}>
+          <Nav />
+          <div className="flex flex-col ">
+            {children}
+            {pathname === "/" ? <div /> : <Footer />}
+          </div>
+        </AppState.Provider>
       </body>
     </html>
   );
