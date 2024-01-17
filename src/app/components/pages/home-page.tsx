@@ -27,15 +27,15 @@ export default function HomePage() {
       <div className="absolute inset-x-0 bottom-0 my-16 animate-fade-in text-center">
         <h2 className="animate-bounce text-sm text-zinc-100 ">
           {/* As a world-class{' '} */}
-          My
+          My{" "}
           <Link
             href="/team"
             className="underline duration-500 hover:text-zinc-300"
           >
             goal
-          </Link>
-          goal is to create significant global impact by designing and
-          implementing highly streamlined and efficient systems.
+          </Link>{" "}
+          is to create significant global impact by designing and implementing
+          highly streamlined and efficient systems.
         </h2>
       </div>
     </div>
