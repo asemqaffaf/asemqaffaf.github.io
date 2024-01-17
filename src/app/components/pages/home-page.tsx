@@ -34,7 +34,6 @@ export default function HomePage() {
           >
             goal
           </Link>
-          {/* we will create value for the world by developing simple and easy systems. */}
           goal is to create significant global impact by designing and
           implementing highly streamlined and efficient systems.
         </h2>
