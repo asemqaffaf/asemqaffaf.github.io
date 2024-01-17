@@ -27,17 +27,16 @@ export default function HomePage() {
       <div className="absolute inset-x-0 bottom-0 my-16 animate-fade-in text-center">
         <h2 className="animate-bounce text-sm text-zinc-100 ">
           {/* As a world-class{' '} */}
-          Our world-class{" "}
+          My
           <Link
             href="/team"
             className="underline duration-500 hover:text-zinc-300"
           >
-            team,
+            goal
           </Link>
           {/* we will create value for the world by developing simple and easy systems. */}
-          is committed to enriching the world through our innovations. We aim to
-          deliver global value through the development of streamlined and
-          efficient systems
+          goal is to create significant global impact by designing and
+          implementing highly streamlined and efficient systems.
         </h2>
       </div>
     </div>
