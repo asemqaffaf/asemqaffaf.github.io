@@ -10,7 +10,7 @@ const randomTypeWriteList = typeWriteList.sort(() => 0.5 - Math.random());
 export default function Footer({
   homeScreen = false,
 }: {
-  homeScreen?: boolen;
+  homeScreen?: boolean;
 }) {
   return (
     <div
