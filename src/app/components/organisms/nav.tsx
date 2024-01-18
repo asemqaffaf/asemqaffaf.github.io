@@ -1,9 +1,9 @@
+/* eslint-disable tailwindcss/no-custom-classname */
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { memo, useContext, useEffect, useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useCallback, useState } from "react";
 
-import { AppState } from "@/hooks/signalsContext";
 import { languages, navigation } from "@/util/nav-items";
 
 function LanguageList() {
@@ -26,21 +26,35 @@ function LanguageList() {
   );
 }
 
-// eslint-disable-next-line react/display-name
-const Nav = memo((): React.JSX.Element => {
-  const pathname = usePathname();
-  const navState = useContext(AppState);
+const Nav = (): React.JSX.Element => {
+  // const pathname = usePathname();
 
   const [isLanguageMenuOpen, setIsLanguageMenuOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  useEffect(() => {
-    navState.value = { currentNav: pathname, navNumber: 0 };
-  }, [navState, pathname]);
+  const searchParams = useSearchParams();
 
-  const updateNavState = (navNumber: number) => {
-    navState.value = { currentNav: navState.value.currentNav, navNumber };
-  };
+  const router = useRouter();
+
+  const createQueryString = useCallback(
+    (name: string, value: string) => {
+      const params = new URLSearchParams(searchParams.toString());
+      params.set(name, value);
+
+      return params.toString();
+    },
+    [searchParams],
+  );
+
+  const handlePageChange = useCallback(
+    (navNumber: number) => {
+      const pathname = "/";
+      router.push(
+        `${pathname}?${createQueryString("nav", navNumber.toString())}`,
+      );
+    },
+    [createQueryString, router],
+  );
 
   const toggleLanguageMenu = () => {
     setIsLanguageMenuOpen(!isLanguageMenuOpen);
@@ -49,7 +63,7 @@ const Nav = memo((): React.JSX.Element => {
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
-  // HOME ABOUT PORTFOLIO BLOG CONTACT
+
   return (
     <nav className="absolute z-50 h-fit w-screen animate-fade-in self-center bg-white duration-1000 dark:bg-zinc-800">
       <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4">
@@ -119,20 +133,12 @@ const Nav = memo((): React.JSX.Element => {
           <ul className="mt-4 flex flex-col rounded-lg border border-gray-100 bg-gray-50 p-4 font-medium md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-white md:p-0 rtl:space-x-reverse dark:bg-zinc-800 md:dark:bg-zinc-800">
             {navigation.map((item) => (
               <li key={item.name}>
-                {/* <Link
-                  // href={item.href}
-                  href="/"
-                  // className="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
-                  className="block rounded px-3 py-2 text-gray-900 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-blue-700 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent md:dark:hover:text-blue-500"
-                  aria-current="page"
-                > */}
                 <button
                   type="button"
-                  onClick={() => updateNavState(item.index)}
+                  onClick={() => handlePageChange(item.index)}
                 >
                   {item.name}
                 </button>
-                {/* </Link> */}
               </li>
             ))}
           </ul>
@@ -143,5 +149,5 @@ const Nav = memo((): React.JSX.Element => {
       </div>
     </nav>
   );
-});
+};
 export default Nav;

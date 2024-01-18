@@ -7,8 +7,6 @@ import LocalFont from "@next/font/local";
 // import type { Metadata } from "next";
 import { usePathname } from "next/navigation";
 
-import { AppState, navState } from "@/hooks/signalsContext";
-
 import Footer from "./components/organisms/footer";
 import Nav from "./components/organisms/nav";
 // import Footer from './components/pages/footer';
@@ -87,13 +85,11 @@ export default function RootLayout({
       <head>{/* <Analytics /> */}</head>
 
       <body className="bg-custom-gradient">
-        <AppState.Provider value={navState}>
-          <Nav />
-          <div className="flex flex-col ">
-            {children}
-            {pathname === "/" ? <div /> : <Footer />}
-          </div>
-        </AppState.Provider>
+        <Nav />
+        <div className="flex flex-col ">
+          {children}
+          {pathname === "/" ? <div /> : <Footer />}
+        </div>
       </body>
     </html>
   );

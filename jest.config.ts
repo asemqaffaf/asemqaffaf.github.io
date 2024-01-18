@@ -11,7 +11,7 @@ const config: Config = {
   bail: 1,
   verbose: true,
   coverageProvider: "v8",
-  // testEnvironment: "jsdom",
+  testEnvironment: "jsdom",
 
   preset: "ts-jest",
   transform: { "^.+\\.ts?$": "ts-jest" },

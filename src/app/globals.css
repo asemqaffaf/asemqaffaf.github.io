@@ -19,3 +19,8 @@
 body {
   color: rgb(var(--foreground-rgb));
 }
+
+.temporary-bounce {
+  -webkit-animation-iteration-count: 4;
+  animation-iteration-count: 4;
+}

@@ -1,10 +1,8 @@
 "use client";
 
-import React, { useCallback, useContext } from "react";
+import { useSearchParams } from "next/navigation";
+import React from "react";
 import ReactPageScroller from "react-page-scroller";
-import { useSignalValue } from "signals-react-safe";
-
-import { AppState } from "@/hooks/signalsContext";
 
 import Footer from "./components/organisms/footer";
 // import Nav from "./components/organisms/nav";
@@ -15,28 +13,42 @@ import News from "./components/pages/news";
 import Services from "./components/pages/services";
 
 export default function App(): React.JSX.Element {
-  const appState = useContext(AppState);
-  const navStateValue = useSignalValue(appState);
-
-  const handlePageChange = useCallback(
-    (navNumber: number) => {
-      appState.value = { currentNav: appState.value.currentNav, navNumber };
-    },
-    [appState],
-  );
+  const searchParams = useSearchParams();
 
   return (
-    <ReactPageScroller
-      renderAllPagesOnFirstRender={false}
-      pageOnChange={handlePageChange}
-      customPageNumber={navStateValue.navNumber}
-    >
-      <HomePage />
-      <Company />
-      <News />
-      <Services shouldMount={navStateValue.navNumber === 3} />
-      <Contact />
-      <Footer homeScreen />
-    </ReactPageScroller>
+    <>
+      <div className="flex w-screen flex-col md:hidden">
+        <div className="h-screen w-screen">
+          <HomePage />
+        </div>
+        <div className="h-screen w-screen">
+          <Company />
+        </div>
+
+        <div className="h-full w-screen">
+          <News />
+        </div>
+        <div className="h-full w-screen">
+          <Contact />
+        </div>
+
+        <div className="h-full w-screen">
+          <Footer />
+        </div>
+      </div>
+      <div className="hidden w-screen md:flex">
+        <ReactPageScroller
+          renderAllPagesOnFirstRender={false}
+          customPageNumber={Number(searchParams?.get("nav")) || 0}
+        >
+          <HomePage />
+          <Company />
+          <News />
+          <Services />
+          <Contact />
+          <Footer homeScreen />
+        </ReactPageScroller>
+      </div>
+    </>
   );
 }

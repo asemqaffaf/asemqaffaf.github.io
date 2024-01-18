@@ -26,8 +26,8 @@ export default function Card({
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
-      <div className="card-container">
-        <div className="card-card">
+      <div className="card-container w-[95svw] md:w-96">
+        <div className="card-card bg-zinc-100 dark:bg-gray-800 dark:border-gray-700">
           <div
             className="flag"
             style={{
@@ -48,9 +48,11 @@ export default function Card({
             />
           </div>
           <div className="card-contentBx ">
-            <h2 className="my-10">{name}</h2>
+            <h2 className={`my-2 text-2xl ${hover ? "text-gray-800" : ""}`}>
+              {name}
+            </h2>
             <div className="card-size">
-              <p className="font-light text-zinc-100">{brief}</p>
+              <p className="font-light text-zinc-100 text-sm">{brief}</p>
             </div>
             <div className="card-color">
               <p className="text-zinc-100">{lastWord}</p>

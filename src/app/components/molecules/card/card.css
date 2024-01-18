@@ -17,9 +17,13 @@
 
 .card-container .card-card {
   position: relative;
-  width: 24rem;
-  height: 80vh;
-  background: #a9a9a9;
+  /* width: 24rem; */
+  /* max-width: 16rem; */
+  /* min-width: 16rem; */
+
+  height: 40rem;
+  /* background: #a9a9a9; */
+  /* background: #ffff; */
   border-radius: 20px;
   overflow: hidden;
 }
@@ -101,10 +105,11 @@
 
 .card-container .card-card .card-contentBx h2 {
   position: relative;
+  font-weight: bold;
   font-weight: 900;
   letter-spacing: 1px;
   /* color: #fff; */
-  color: black;
+  /* color: black; */
   /* color: rgb(49, 49, 49); */
   margin-top: 2%;
   /* margin: 0; */
