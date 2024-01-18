@@ -68,7 +68,7 @@ export function FooterWithSitemap() {
               <ul className="font-light text-gray-500 dark:text-gray-400">
                 <li className="mb-4">
                   <Link
-                    href="/company"
+                    href="/?nav=1"
                     className="text-zinc-400 duration-700 hover:text-black   dark:hover:text-white"
                   >
                     {t("footer.element.col-1-1")}
@@ -76,7 +76,7 @@ export function FooterWithSitemap() {
                 </li>
                 <li className="mb-4">
                   <Link
-                    href="/company"
+                    href="/?nav=2"
                     className="text-zinc-400 duration-700 hover:text-black   dark:hover:text-white"
                   >
                     {t("footer.element.col-1-2")}
@@ -84,7 +84,7 @@ export function FooterWithSitemap() {
                 </li>
                 <li className="mb-4">
                   <Link
-                    href="/company"
+                    href="/?nav=4"
                     className="text-zinc-400 duration-700 hover:text-black   dark:hover:text-white"
                   >
                     {t("footer.element.col-1-3")}
@@ -92,7 +92,7 @@ export function FooterWithSitemap() {
                 </li>
                 <li className="mb-4">
                   <Link
-                    href="/company"
+                    href="/?nav=4"
                     className="text-zinc-400 duration-700 hover:text-black   dark:hover:text-white"
                   >
                     {t("footer.element.col-1-4")}
@@ -100,7 +100,7 @@ export function FooterWithSitemap() {
                 </li>
                 <li>
                   <Link
-                    href="/company"
+                    href="/?nav=4"
                     className="text-zinc-400 duration-700 hover:text-black   dark:hover:text-white"
                   >
                     {t("footer.element.col-1-5")}
@@ -114,28 +114,31 @@ export function FooterWithSitemap() {
               </h2>
               <ul className="font-light text-gray-500 dark:text-gray-400">
                 <li className="mb-4">
-                  <Link
+                  <a
                     href="https://github.com/asemqaffaf"
+                    target="_blank"
                     className="text-zinc-400 duration-700 hover:text-black   dark:hover:text-white"
                   >
                     {t("footer.element.col-2-1")}
-                  </Link>
+                  </a>
                 </li>
                 <li className="mb-4">
-                  <Link
+                  <a
                     href="https://linkedin.com/in/asem-qaffaf-🍉-75b541199/"
+                    target="_blank"
                     className="text-zinc-400 duration-700 hover:text-black   dark:hover:text-white"
                   >
                     {t("footer.element.col-2-2")}
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <Link
-                    href="https://github.com/asemqaffaf"
+                  <a
+                    href="https://facebook.com/asemqaffaf"
+                    target="_blank"
                     className="text-zinc-400 duration-700 hover:text-black   dark:hover:text-white"
                   >
                     {t("footer.element.col-2-3")}
-                  </Link>
+                  </a>
                 </li>
               </ul>
             </div>
@@ -170,8 +173,9 @@ export function FooterWithSitemap() {
             © {new Date().getFullYear()} {t("footer.element.copyrights")}
           </span>
           <div className="mt-4 flex flex-col items-center sm:mt-0 sm:flex-row sm:items-start sm:justify-center ">
-            <Link
+            <a
               href="https://facebook.com/asemqaffaf"
+              target="_blank"
               className="text-gray-500 duration-700 hover:text-gray-900 dark:hover:text-white"
             >
               <FontAwesomeIcon
@@ -179,9 +183,10 @@ export function FooterWithSitemap() {
                 icon={faFacebookF}
               />
               <span className="sr-only">Facebook page</span>
-            </Link>
-            <Link
+            </a>
+            <a
               href="https://www.linkedin.com/in/asem-qaffaf-🍉-75b541199/"
+              target="_blank"
               className="ms-5 text-gray-500 duration-700 hover:text-gray-900 dark:hover:text-white"
             >
               <FontAwesomeIcon
@@ -189,9 +194,10 @@ export function FooterWithSitemap() {
                 icon={faLinkedinIn}
               />
               <span className="sr-only">LinkedIn</span>
-            </Link>
-            <Link
+            </a>
+            <a
               href="https://twitter.com/asemqaffaf"
+              target="_blank"
               className="ms-5 text-gray-500 duration-700 hover:text-gray-900 dark:hover:text-white"
             >
               <FontAwesomeIcon
@@ -199,9 +205,10 @@ export function FooterWithSitemap() {
                 icon={faXTwitter}
               />
               <span className="sr-only">X Twitter</span>
-            </Link>
-            <Link
+            </a>
+            <a
               href="https://github.com/asemqaffaf"
+              target="_blank"
               className="ms-5 text-gray-500 duration-700 hover:text-gray-900 dark:hover:text-white"
             >
               <FontAwesomeIcon
@@ -209,7 +216,7 @@ export function FooterWithSitemap() {
                 icon={faGithub}
               />
               <span className="sr-only">GitHub</span>
-            </Link>
+            </a>
           </div>
         </div>
       </div>
