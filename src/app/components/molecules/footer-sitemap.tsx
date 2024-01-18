@@ -23,6 +23,18 @@ export function FooterWithSitemap() {
                 {t("footer.element.title")}
               </span>
             </Link>
+
+            <a href="tel:+817092831954">
+              <div className="mt-4 mb-1 flex flex-col font-light text-gray-500 duration-700  hover:text-black dark:text-gray-400   dark:hover:text-white">
+                <span className=" mb-1">Tel: +81 70 9283 1954</span>
+              </div>
+            </a>
+            <a href="mailto:asem@qaffaf.com?subject=Mail from My Site">
+              <div className="mb-2 flex flex-col font-light text-gray-500 duration-700  hover:text-black dark:text-gray-400   dark:hover:text-white">
+                <span className=" mb-1">Email: asem@qaffaf.com</span>
+              </div>
+            </a>
+
             <Link
               rel="noopener noreferrer"
               target="_blank"

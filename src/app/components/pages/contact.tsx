@@ -1,9 +1,17 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React from "react";
+import type { FormEvent } from "react";
 import { useTranslation } from "react-i18next";
 
 export default function Contact() {
   const { t } = useTranslation();
+
+  const submitContactForm = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    // const email = (e.currentTarget.elements[0] as HTMLInputElement).value;
+    // const subject = (e.currentTarget.elements[1] as HTMLInputElement).value;
+    // const message = (e.currentTarget.elements[2] as HTMLInputElement).value;
+    // console.log({ email, subject, message });
+  };
   return (
     <div className="h-screen w-screen bg-white pt-24 dark:bg-gray-900">
       <section className="bg-white dark:bg-gray-900">
@@ -14,7 +22,7 @@ export default function Contact() {
           <p className="mb-8 text-center font-light text-gray-500 sm:text-xl lg:mb-16 dark:text-gray-400">
             {t("page.contact.sub-title")}
           </p>
-          <form action="#" className="space-y-8">
+          <form onSubmit={submitContactForm} className="space-y-8">
             <div>
               <label
                 className="mb-2 block text-sm font-medium text-gray-900 dark:text-gray-300"
