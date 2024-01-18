@@ -36,7 +36,7 @@ export default function Portfolio() {
             <Image
               width={500}
               height={500}
-              className="h-auto max-w-full   rounded-lg bg-blue-500 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500"
+              className="h-auto max-w-full   rounded-lg bg-white transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
               src="/images/companies/orange.svg.png"
               alt=""
             />
@@ -65,7 +65,7 @@ export default function Portfolio() {
             <Image
               width={500}
               height={500}
-              className="h-auto max-w-full   rounded-lg bg-blue-500 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500"
+              className="h-auto max-w-full   rounded-lg bg-white transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
               src="/images/companies/wired-jp.jpg"
               alt=""
             />
@@ -104,7 +104,7 @@ export default function Portfolio() {
             <Image
               width={500}
               height={500}
-              className="h-auto max-w-full   rounded-lg bg-blue-500 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500"
+              className="h-auto max-w-full   rounded-lg bg-white transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
               src="/images/companies/open-garden.png"
               alt=""
             />
