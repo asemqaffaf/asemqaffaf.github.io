@@ -3,38 +3,20 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useCallback, useState } from "react";
+import { useTranslation } from "react-i18next";
 
-import { languages, navigation } from "@/util/nav-items";
+import { languagesList, navigationElements } from "@/util/nav-items";
 
-function LanguageList() {
-  return (
-    <ul className="py-2 font-medium" role="none">
-      {languages.map((lang) => (
-        <li key={lang.value}>
-          <Link
-            href="/"
-            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
-            role="menuitem"
-          >
-            <div className="inline-flex items-center whitespace-nowrap">
-              {lang.name}
-            </div>
-          </Link>
-        </li>
-      ))}
-    </ul>
-  );
-}
+import LanguageList from "./language";
 
 const Nav = (): React.JSX.Element => {
-  // const pathname = usePathname();
+  const router = useRouter();
+  const { t, i18n } = useTranslation();
 
   const [isLanguageMenuOpen, setIsLanguageMenuOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const searchParams = useSearchParams();
-
-  const router = useRouter();
 
   const createQueryString = useCallback(
     (name: string, value: string) => {
@@ -78,7 +60,7 @@ const Nav = (): React.JSX.Element => {
             height={80}
           />
           <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-white">
-            {/* A.A.K */}
+            {/* Logo Title */}
           </span>
         </Link>
         <div className="flex items-center space-x-1 md:order-2 md:space-x-0 rtl:space-x-reverse">
@@ -87,14 +69,14 @@ const Nav = (): React.JSX.Element => {
             type="button"
             data-dropdown-toggle="language-dropdown-menu"
             onClick={toggleLanguageMenu}
-            className="flex cursor-pointer items-center justify-center rounded-lg px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100 md:flex lg:flex dark:text-white dark:hover:bg-zinc-800 dark:hover:text-white"
+            className="flex w-36 cursor-pointer items-center justify-center rounded-lg px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100 md:flex lg:flex dark:text-white dark:hover:bg-zinc-800 dark:hover:text-white"
           >
-            🇺🇲 | English (US)
+            {languagesList.find((lang) => lang.value === i18n.language)?.name ||
+              languagesList["0"].name}
           </button>
           {/* <!-- Dropdown --> */}
           <div
             className={`${isLanguageMenuOpen ? "hidden md:flex" : "hidden"}  show absolute top-10 z-50 my-4 list-none divide-y divide-gray-100 rounded-lg bg-white text-base shadow dark:bg-zinc-800`}
-            // className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
             id="language-dropdown-menu"
           >
             <LanguageList />
@@ -117,9 +99,9 @@ const Nav = (): React.JSX.Element => {
             >
               <path
                 stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 d="M1 1h15M1 7h15M1 13h15"
               />
             </svg>
@@ -131,13 +113,14 @@ const Nav = (): React.JSX.Element => {
           id="navbar-language"
         >
           <ul className="mt-4 flex flex-col rounded-lg border border-gray-100 bg-gray-50 p-4 font-medium md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-white md:p-0 rtl:space-x-reverse dark:bg-zinc-800 md:dark:bg-zinc-800">
-            {navigation.map((item) => (
+            {navigationElements.map((item, i) => (
               <li key={item.name}>
                 <button
+                  className={` sm:${i < navigationElements.length - 1 && "mb-5"}`}
                   type="button"
                   onClick={() => handlePageChange(item.index)}
                 >
-                  {item.name}
+                  {t(`nav.element.${item.name}`)}
                 </button>
               </li>
             ))}

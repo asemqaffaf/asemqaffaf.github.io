@@ -4,16 +4,17 @@
 // Blog
 
 // HOME ABOUT PORTFOLIO CONTACT
-export const navigation = [
+export const navigationElements = [
   // news should be -> About
-  { name: "Home", href: "/", index: 0 },
-  { name: "About", href: "/company", index: 1 },
-  { name: "Portfolio", href: "/news", index: 2 },
-  // { name: "Services", href: "/services", index: 3 },
-  { name: "Contact", href: "/contact", index: 4 },
+  { name: "home", href: "/", index: 0 },
+  { name: "about", href: "/company", index: 1 },
+  { name: "portfolio", href: "/news", index: 2 },
+  { name: "contact", href: "/contact", index: 4 },
 ] as const;
 
-export const languages = [
+export const languagesList = [
   { name: "🇺🇲 | English (US)", value: "en" },
-  { name: "🇯🇵 | 日本語", value: "ja" },
-];
+  { name: "🇯🇵 | 日本語", value: "jp" },
+] as const;
+
+export type LanguageType = (typeof languagesList)[number]["value"];

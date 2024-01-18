@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import Company from "@/app/components/pages/company";
+import Company from "@/app/components/pages/about";
 
 export default function page() {
   return (

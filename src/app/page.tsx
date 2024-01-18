@@ -6,11 +6,11 @@ import ReactPageScroller from "react-page-scroller";
 
 import Footer from "./components/organisms/footer";
 // import Nav from "./components/organisms/nav";
-import Company from "./components/pages/company";
+import About from "./components/pages/about";
 import Contact from "./components/pages/contact";
 import HomePage from "./components/pages/home-page";
-import News from "./components/pages/news";
-import Services from "./components/pages/services";
+import Portfolio from "./components/pages/portfolio";
+import PortfolioSecondPage from "./components/pages/portfolio-second-page";
 
 export default function App(): React.JSX.Element {
   const searchParams = useSearchParams();
@@ -22,11 +22,11 @@ export default function App(): React.JSX.Element {
           <HomePage />
         </div>
         <div className="h-screen w-screen">
-          <Company />
+          <About />
         </div>
 
         <div className="h-full w-screen">
-          <News />
+          <Portfolio />
         </div>
         <div className="h-full w-screen">
           <Contact />
@@ -42,9 +42,9 @@ export default function App(): React.JSX.Element {
           customPageNumber={Number(searchParams?.get("nav")) || 0}
         >
           <HomePage />
-          <Company />
-          <News />
-          <Services />
+          <About />
+          <Portfolio />
+          <PortfolioSecondPage />
           <Contact />
           <Footer homeScreen />
         </ReactPageScroller>

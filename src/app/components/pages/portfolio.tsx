@@ -1,13 +1,15 @@
-// import Link from "next/link";
 import Image from "next/image";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
-export default function News() {
+export default function Portfolio() {
+  const { t } = useTranslation();
+
   return (
     <div className="flex h-full w-screen flex-col bg-zinc-200 pt-24">
-      <div className="flex  my-10  w-full justify-center">
+      <div className="my-6 flex  w-full justify-center">
         <h1 className="z-10 animate-title bg-white bg-clip-text py-4 font-display text-2xl text-zinc-700 duration-1000  sm:text-2xl md:text-4xl">
-          As a pivotal contributor to numerous significant projects
+          {t("page.Portfolio.title")}
         </h1>
       </div>
       <div className="grid grid-cols-2 gap-3 md:grid-cols-4">

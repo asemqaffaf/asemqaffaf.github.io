@@ -1,67 +1,19 @@
 "use client";
 
-import "./globals.css";
+/* eslint-disable import/no-extraneous-dependencies */
 
-import { Inter } from "@next/font/google";
-import LocalFont from "@next/font/local";
-// import type { Metadata } from "next";
+import "./globals.css";
+import "../config/i18next";
+
+import { Inter } from "next/font/google";
+import LocalFont from "next/font/local";
 import { usePathname } from "next/navigation";
+import { appWithTranslation } from "next-i18next";
+import { Client, HydrationProvider } from "react-hydration-provider";
 
 import Footer from "./components/organisms/footer";
 import Nav from "./components/organisms/nav";
-// import Footer from './components/pages/footer';
 
-// export const metadata: Metadata = {
-//   metadataBase: new URL("https://asemqaffaf.com"),
-//   alternates: {
-//     canonical: "/",
-//     languages: {
-//       "en-US": "/en-US",
-//       "ja-JA": "/ja-JA",
-//     },
-//   },
-//   openGraph: {
-//     images: "/og-image.png",
-//   },
-//   icons: {
-//     shortcut: "/favicon.png",
-//   },
-// };
-
-// export const metadata: Metadata = {
-//   title: {
-//     default: 'asemqaffaf.com',
-//     template: '%s | asemqaffaf.com',
-//   },
-//   openGraph: {
-//     title: 'asemqaffaf.com',
-//     url: 'https://asemqaffaf.com',
-//     siteName: 'asemqaffaf.com',
-//     // images: [
-//     //   {
-//     //     url: 'https://asemqaffaf.com/og.png',
-//     //     width: 1920,
-//     //     height: 1080,
-//     //   },
-//     // ],
-//     locale: 'en-US',
-//     type: 'website',
-//   },
-//   robots: {
-//     index: true,
-//     follow: true,
-//     googleBot: {
-//       index: true,
-//       follow: true,
-//       'max-video-preview': -1,
-//       'max-image-preview': 'large',
-//       'max-snippet': -1,
-//     },
-//   },
-//   icons: {
-//     shortcut: '/favicon.png',
-//   },
-// };
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
@@ -72,25 +24,26 @@ const calSans = LocalFont({
   variable: "--font-calsans",
 });
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+function RootLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-  // const navStateValue = useSignalValue(navState);
-  // console.log("navStateValue :>> ", navStateValue);
+
   return (
     <html lang="en" className={[inter.variable, calSans.variable].join(" ")}>
       <head>{/* <Analytics /> */}</head>
 
       <body className="bg-custom-gradient">
-        <Nav />
-        <div className="flex flex-col ">
-          {children}
-          {pathname === "/" ? <div /> : <Footer />}
-        </div>
+        <HydrationProvider>
+          <Client>
+            <Nav />
+            <div className="flex flex-col ">
+              {children}
+              {pathname === "/" ? <div /> : <Footer />}
+            </div>
+          </Client>
+        </HydrationProvider>
       </body>
     </html>
   );
 }
+
+export default appWithTranslation<never>(RootLayout);
