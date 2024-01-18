@@ -3,7 +3,8 @@ export const aboutMe = {
   brief:
     "As a Senior Software Engineer with extensive experience in Japan, Europe, and the USA, I excel in delivering innovative solutions using my strong JavaScript skills. Known for exceptional organization and self-motivation, I am deeply committed to making a positive impact in the tech industry, consistently striving for excellence and significantly contributing to the field of software engineering.",
   profilePic: "/images/asem.png",
-  flagUrl: "/images/jordan-flag.png",
+  // flagUrl: "/images/jordan-flag.png",
+  flagUrl: "/images/japan-flag.png",
   lastWord: "",
 } as const;
 

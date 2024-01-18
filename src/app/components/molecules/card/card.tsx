@@ -48,11 +48,13 @@ export default function Card({
             />
           </div>
           <div className="card-contentBx ">
-            <h2 className={`my-2 text-2xl ${hover ? "text-gray-800" : ""}`}>
+            {/*   <h2 className={`my-2 text-2xl ${hover ? "text-gray-800" : ""}`}> */}
+            <h2 className={`my-2 text-2xl ${hover ? "text-zinc-200" : ""}`}>
               {name}
             </h2>
             <div className="card-size">
-              <p className="font-light text-zinc-100 text-sm">{brief}</p>
+              {/*   <p className="font-light text-zinc-100 text-sm">{brief}</p> */}
+              <p className="font-medium text-gray-800 text-sm">{brief}</p>
             </div>
             <div className="card-color">
               <p className="text-zinc-100">{lastWord}</p>
