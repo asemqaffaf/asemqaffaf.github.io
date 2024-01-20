@@ -10,7 +10,7 @@ export default function About() {
 
   return (
     <div className="flex h-screen w-screen flex-row">
-      <div className="mt-5 flex h-full w-full flex-col items-center justify-center self-center md:w-2/4">
+      <div className="mt-5 flex h-full w-full flex-col items-center justify-center self-center md:w-2/4 h-full">
         <Card
           {...aboutMe}
           name={t("component.element.name")}

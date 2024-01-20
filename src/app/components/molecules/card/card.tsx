@@ -22,11 +22,11 @@ export default function Card({
 
   return (
     <div
-      className="card-body"
+      className="card-body  h-full"
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
-      <div className="card-container w-[95svw] md:w-96">
+      <div className="card-container w-[95svw] md:w-96 h-3/4">
         <div className="card-card bg-zinc-100 dark:bg-gray-800 dark:border-gray-700">
           <div
             className="flag"
@@ -37,17 +37,21 @@ export default function Card({
                 : "circle(150px at 80% 15%)",
             }}
           />
-          <div className="card-imgBx">
+          <div className="card-imgBx h-full w-full">
             <Image
-              width={150}
-              height={150}
+              width={50}
+              height={50}
+              // objectFit="contains"
+              // fill
+              // objectFit=""
+              // content=""
               className="rounded-full"
               src={`${profilePic}`}
               alt={name}
               priority
             />
           </div>
-          <div className="card-contentBx ">
+          <div className="card-contentBx">
             {/*   <h2 className={`my-2 text-2xl ${hover ? "text-gray-800" : ""}`}> */}
             <h2 className={`my-2 text-2xl ${hover ? "text-zinc-200" : ""}`}>
               {name}
