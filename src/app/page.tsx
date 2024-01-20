@@ -1,7 +1,8 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
-import React from "react";
+import type { RefObject } from "react";
+import React, { useEffect, useRef } from "react";
 import ReactPageScroller from "react-page-scroller";
 
 import Footer from "./components/organisms/footer";
@@ -14,25 +15,58 @@ import PortfolioSecondPage from "./components/pages/portfolio-second-page";
 
 export default function App(): React.JSX.Element {
   const searchParams = useSearchParams();
+  const bannerRef = useRef<HTMLDivElement>(null);
+  const aboutRef = useRef<HTMLDivElement>(null);
+  const portfolioRef = useRef<HTMLDivElement>(null);
+  const contactRef = useRef<HTMLDivElement>(null);
 
+  const scrollIntoView = (ref: RefObject<HTMLDivElement>) => {
+    ref.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest",
+    });
+  };
+
+  useEffect(() => {
+    const navNumber = searchParams?.get("nav");
+
+    switch (navNumber) {
+      case "0":
+        scrollIntoView(bannerRef);
+        break;
+      case "1":
+        scrollIntoView(aboutRef);
+        break;
+      case "2":
+        scrollIntoView(portfolioRef);
+        break;
+      case "3":
+        scrollIntoView(contactRef);
+        break;
+
+      default:
+        break;
+    }
+  }, [searchParams]);
   return (
     <>
       <div className="flex w-screen flex-col lg:hidden">
-        <div className="h-screen w-screen">
+        <div ref={bannerRef} className="h-screen w-screen">
           <HomePage />
         </div>
-        <div className="h-screen w-screen">
+        <div ref={aboutRef} className="h-screen w-screen">
           <About />
         </div>
 
-        <div className="h-full w-screen">
+        <div ref={portfolioRef} id="portfolio-main" className="h-full w-screen">
           <Portfolio />
         </div>
-        <div className="h-full w-screen">
+        <div ref={contactRef} id="contact-main" className="h-full w-screen">
           <Contact />
         </div>
 
-        <div className="h-screen w-screen">
+        <div id="footer-main" className="h-screen w-screen">
           <Footer />
         </div>
       </div>

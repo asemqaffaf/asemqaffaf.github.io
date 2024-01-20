@@ -18,7 +18,7 @@ export function FooterWithSitemap() {
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8  ">
         <div className="items-center md:flex md:justify-between">
           <div className="mb-6 flex flex-col md:mb-0">
-            <Link href="/">
+            <Link href="/?nav=0">
               <span className="self-center whitespace-nowrap text-2xl font-semibold text-gray-500 duration-1000 hover:text-gray-900 dark:hover:text-white">
                 {t("footer.element.title")}
               </span>

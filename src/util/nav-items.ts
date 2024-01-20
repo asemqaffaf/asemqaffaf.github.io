@@ -2,7 +2,7 @@ export const navigationElements = [
   { name: "home", href: "/", index: 0 },
   { name: "about", href: "/company", index: 1 },
   { name: "portfolio", href: "/news", index: 2 },
-  { name: "contact", href: "/contact", index: 4 },
+  { name: "contact", href: "/contact", index: 3 },
 ] as const;
 
 export const languagesList = [
