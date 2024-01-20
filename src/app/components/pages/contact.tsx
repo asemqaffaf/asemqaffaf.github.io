@@ -13,9 +13,9 @@ export default function Contact() {
     // console.log({ email, subject, message });
   };
   return (
-    <div className="h-screen w-screen bg-white pt-24 dark:bg-gray-900">
-      <section className="bg-white dark:bg-gray-900">
-        <div className="mx-auto max-w-screen-md px-4 py-8 lg:py-16">
+    <div className="h-full w-screen bg-white pt-24 dark:bg-gray-900 overflow-scroll">
+      <section className="bg-white dark:bg-gray-900 h-full w-full overflow-scroll">
+        <div className="px-[20%] pb-4 ">
           <h2 className="mb-4 text-center text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white">
             {t("page.contact.title")}
           </h2>

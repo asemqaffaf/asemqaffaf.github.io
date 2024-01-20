@@ -27,17 +27,17 @@ export default function Card({
       onMouseLeave={() => setHover(false)}
     >
       <div className="card-container w-[95svw] md:w-96 h-3/4">
-        <div className="card-card bg-zinc-100 dark:bg-gray-800 dark:border-gray-700">
+        <div className="card-card bg-zinc-100 dark:bg-gray-800 dark:border-gray-700 flex justify-center  items-center self-center ">
           <div
             className="flag"
             style={{
               backgroundImage: `url("${flagUrl}")`,
               clipPath: hover
-                ? "circle(100% at 100%)"
+                ? "circle(100% at 80%)"
                 : "circle(150px at 80% 15%)",
             }}
           />
-          <div className="card-imgBx h-full w-full">
+          <div className="card-imgBx h-3/4 w-3/4 lg:left-0 lg:right-0 lg:h-full  lg:w-full ">
             <Image
               width={50}
               height={50}

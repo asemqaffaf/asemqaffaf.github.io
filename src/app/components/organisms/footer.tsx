@@ -42,10 +42,10 @@ export default function Footer({
 }) {
   return (
     <div
-      className={`flex flex-col ${homeScreen ? "h-screen" : undefined}  justify-center`}
+      className={`flex flex-col ${homeScreen ? "h-screen" : ""}  justify-center`}
     >
-      <div className="hidden h-[70%] w-full items-center sm:flex md:flex">
-        <div className="text-4xl h-80 font-extralight flex justify-center items-center text-zinc-100 sm:text-5xl md:text-8xl">
+      <div className="hidden h-2/6 md:h-1/4 lg:h-2/4 w-full items-center sm:flex md:flex ">
+        <div className="text-4xl h-80 font-extralight flex justify-center items-center text-zinc-100 sm:text-5xl md:text-4xl lg:text-8xl">
           <Typewriter
             options={{
               strings: randomTypeWriteList,
@@ -55,7 +55,9 @@ export default function Footer({
           />
         </div>
       </div>
-      <FooterWithSitemap />
+      <div className="h-4/6 md:h-3/4 lg:h-2/4  w-full">
+        <FooterWithSitemap />
+      </div>
     </div>
   );
 }

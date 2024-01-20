@@ -17,7 +17,7 @@ export default function App(): React.JSX.Element {
 
   return (
     <>
-      <div className="flex w-screen flex-col md:hidden">
+      <div className="flex w-screen flex-col lg:hidden">
         <div className="h-screen w-screen">
           <HomePage />
         </div>
@@ -32,11 +32,11 @@ export default function App(): React.JSX.Element {
           <Contact />
         </div>
 
-        <div className="h-full w-screen">
+        <div className="h-screen w-screen">
           <Footer />
         </div>
       </div>
-      <div className="hidden w-screen md:flex">
+      <div className="hidden w-screen lg:flex">
         <ReactPageScroller
           renderAllPagesOnFirstRender={false}
           customPageNumber={Number(searchParams?.get("nav")) || 0}
