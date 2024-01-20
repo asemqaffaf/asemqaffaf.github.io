@@ -38,7 +38,7 @@ export function FooterWithSitemap() {
             <Link
               rel="noopener noreferrer"
               target="_blank"
-              href="https://www.google.com/maps/place/Akasaka,+Minato+City,+Tokyo+107-0052/data=!4m2!3m1!1s0x60188b811f57f195:0x11a6a34cc5074741?sa=X&ved=2ahUKEwjL9rKQ1OSDAxXsaPUHHYarDuQQ8gF6BAgiEAA"
+              href="https://www.google.com/maps?sca_esv=600053872&rlz=1C5CHFA_enJP1080JP1081&output=search&q=roppongi&source=lnms&entry=mc"
             >
               <div className="my-5 mb-1 flex flex-col font-light text-gray-500 duration-700  hover:text-black dark:text-gray-400   dark:hover:text-white">
                 {/* <span className="mb-1">Asem Qaffaf</span> */}
