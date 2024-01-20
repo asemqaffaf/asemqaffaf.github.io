@@ -19,15 +19,16 @@ export default function Card({
   lastWord,
 }: ICardProps) {
   const [hover, setHover] = useState<boolean>(false);
-
+  console.log("hover :>> ", hover);
   return (
-    <div
-      className="card-body  h-full"
-      onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
-    >
-      <div className="card-container w-[95svw] md:w-96 h-3/4">
-        <div className="card-card bg-zinc-100 dark:bg-gray-800 dark:border-gray-700 flex justify-center  items-center self-center ">
+    <div className="card-body h-full">
+      <div
+        className="card-container h-3/4 w-[95svw] md:w-96"
+        onTouchCancel={() => setHover(false)}
+        onMouseEnter={() => setHover(true)}
+        onMouseLeave={() => setHover(false)}
+      >
+        <div className="card-card flex items-center justify-center self-center bg-zinc-100  dark:border-gray-700 dark:bg-gray-800 ">
           <div
             className="flag"
             style={{
@@ -37,7 +38,7 @@ export default function Card({
                 : "circle(150px at 80% 15%)",
             }}
           />
-          <div className="card-imgBx h-3/4 w-3/4 lg:left-0 lg:right-0 lg:h-full  lg:w-full ">
+          <div className="card-imgBx h-3/4 w-3/4 lg:inset-x-0 lg:h-full lg:w-full">
             <Image
               width={50}
               height={50}
@@ -52,13 +53,11 @@ export default function Card({
             />
           </div>
           <div className="card-contentBx">
-            {/*   <h2 className={`my-2 text-2xl ${hover ? "text-gray-800" : ""}`}> */}
-            <h2 className={`my-2 text-2xl ${hover ? "text-zinc-200" : ""}`}>
+            <h2 className={`my-2 text-2xl ${hover ? "text-zinc-200" : ""} `}>
               {name}
             </h2>
             <div className="card-size">
-              {/*   <p className="font-light text-zinc-100 text-sm">{brief}</p> */}
-              <p className="font-medium text-gray-800 text-sm">{brief}</p>
+              <p className="text-sm font-medium text-gray-800">{brief}</p>
             </div>
             <div className="card-color">
               <p className="text-zinc-100">{lastWord}</p>
