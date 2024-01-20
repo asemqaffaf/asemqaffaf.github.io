@@ -1,11 +1,4 @@
-// export default {};
-
-// BUSINESS
-// Blog
-
-// HOME ABOUT PORTFOLIO CONTACT
 export const navigationElements = [
-  // news should be -> About
   { name: "home", href: "/", index: 0 },
   { name: "about", href: "/company", index: 1 },
   { name: "portfolio", href: "/news", index: 2 },

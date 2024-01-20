@@ -116,7 +116,7 @@ const Nav = (): React.JSX.Element => {
             {navigationElements.map((item, i) => (
               <li key={item.name}>
                 <button
-                  className={` sm:${i < navigationElements.length - 1 && "mb-5"}`}
+                  className={`${i < navigationElements.length - 1 && "mb-5"} md:mb-0`}
                   type="button"
                   onClick={() => handlePageChange(item.index)}
                 >
