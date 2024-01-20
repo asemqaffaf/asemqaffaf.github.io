@@ -148,20 +148,31 @@ export function FooterWithSitemap() {
               </h2>
               <ul className="font-light text-gray-500 dark:text-gray-400">
                 <li className="mb-4">
-                  <Link
-                    href="/"
+                  <a
+                    href="https://www.typescriptlang.org/docs/handbook/typescript-from-scratch.html"
+                    target="_blank"
                     className="text-zinc-400 duration-700 hover:text-black dark:hover:text-white"
                   >
                     {t("footer.element.col-3-1")}
-                  </Link>
+                  </a>
                 </li>
-                <li>
-                  <Link
-                    href="/"
+                <li className="mb-4">
+                  <a
+                    href="https://react.dev/learn"
+                    target="_blank"
                     className="text-zinc-400 duration-700 hover:text-black dark:hover:text-white"
                   >
                     {t("footer.element.col-3-2")}
-                  </Link>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://nextjs.org/blog/next-14"
+                    target="_blank"
+                    className="text-zinc-400 duration-700 hover:text-black dark:hover:text-white"
+                  >
+                    {t("footer.element.col-3-3")}
+                  </a>
                 </li>
               </ul>
             </div>
