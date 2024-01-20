@@ -19,7 +19,7 @@ export default function Card({
   lastWord,
 }: ICardProps) {
   const [hover, setHover] = useState<boolean>(false);
-  console.log("hover :>> ", hover);
+
   return (
     <div className="card-body h-full">
       <div
@@ -57,7 +57,9 @@ export default function Card({
               {name}
             </h2>
             <div className="card-size">
-              <p className="text-sm font-medium text-gray-800">{brief}</p>
+              <p className="text-sm font-medium text-gray-800 flex sm:flex md:hidden lg:flex ">
+                {brief}
+              </p>
             </div>
             <div className="card-color">
               <p className="text-zinc-100">{lastWord}</p>
