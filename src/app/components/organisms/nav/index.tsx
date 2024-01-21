@@ -50,7 +50,7 @@ const Nav = (): React.JSX.Element => {
     <nav className="absolute z-50 h-fit w-screen animate-fade-in self-center bg-white duration-1000 dark:bg-zinc-800">
       <div className="h-50 fixed mx-auto flex w-full flex-wrap items-center justify-between bg-white p-4 duration-1000 dark:bg-zinc-800">
         <Link
-          href="/"
+          href="/?nav=0"
           className="flex items-center space-x-3 rtl:space-x-reverse"
         >
           <Image

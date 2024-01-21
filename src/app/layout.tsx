@@ -5,14 +5,14 @@
 import "./globals.css";
 import "../config/i18next";
 
+import dynamic from "next/dynamic";
 import { Inter } from "next/font/google";
 import LocalFont from "next/font/local";
 import { usePathname } from "next/navigation";
-import { appWithTranslation } from "next-i18next";
+import { appWithTranslation, useTranslation } from "next-i18next";
 import { Client, HydrationProvider } from "react-hydration-provider";
 
 import Footer from "./components/organisms/footer";
-import Header from "./components/organisms/header";
 import Nav from "./components/organisms/nav";
 
 const inter = Inter({
@@ -25,13 +25,20 @@ const calSans = LocalFont({
   variable: "--font-calsans",
 });
 
+const DynamicHeader = dynamic(() => import("./components/organisms/header"));
+
 function RootLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
+  const { i18n } = useTranslation();
 
   return (
-    <html lang="en" className={[inter.variable, calSans.variable].join(" ")}>
+    <html
+      lang={i18n.language || "en"}
+      dir={i18n.language === "ar" ? "rtl" : "ltr"}
+      className={[inter.variable, calSans.variable].join(" ")}
+    >
       <head>
-        <Header />
+        <DynamicHeader />
       </head>
 
       <body className="bg-custom-gradient">

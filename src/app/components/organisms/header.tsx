@@ -1,6 +1,7 @@
 const Header = () => {
   return (
     <>
+      <title>Asem Qaffaf, Full Stack Software Engineer</title>
       <meta httpEquiv="Content-Type" content="text/html; charset=UTF-8" />
       <meta charSet="utf-8" />
       <link rel="canonical" href="http://asemqaffaf.github.io" />
@@ -342,24 +343,7 @@ const Header = () => {
         type="image/vnd.microsoft.icon"
       />
 
-      <title>Asem Qaffaf Software Engineer</title>
-      <link
-        rel="stylesheet"
-        media="all"
-        href="/_flysystem/s3/css/css_j39t6rX8O2ohivgZfV-7RoSqFys-wpy9JgAK3kHJ4is.css"
-      />
-      <link
-        rel="stylesheet"
-        media="all"
-        href="/_flysystem/s3/css/css_OjwxOO8bhvXSZAMAN4u8s8FW-x1JinYhCLgrN517fU0.css"
-      />
-      <link
-        rel="stylesheet"
-        media="all"
-        href="/_flysystem/s3/css/css_6GaNYruJ7yOU8cW2tQWIY-Rd6Wjbi0ejaxacZs_tG9Y.css"
-      />
-
-      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+      <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
       {/* <!-- Lets get mobile --> */}
       <meta name="apple-mobile-web-app-capable" content="yes" />
       <meta name="apple-mobile-web-app-status-bar-style" content="black" />
@@ -451,7 +435,6 @@ const Header = () => {
         data-expires="2018-11-26"
         content="Aob+++752GiUzm1RNSIkM9TINnQDxTlxz02v8hFJK/uGO2hmXnJqH8c/ZpI05b2nLsHDhGO3Ce2zXJUFQmO7jA4AAAB1eyJvcmlnaW4iOiJodHRwczovL25ldGZsaXguY29tOjQ0MyIsImZlYXR1cmUiOiJFbmNyeXB0ZWRNZWRpYUhkY3BQb2xpY3lDaGVjayIsImV4cGlyeSI6MTU0MzI0MzQyNCwiaXNTdWJkb21haW4iOnRydWV91"
       />
-      <title>Asem Qaffaf, Full stack software engineer</title>
     </>
   );
 };
