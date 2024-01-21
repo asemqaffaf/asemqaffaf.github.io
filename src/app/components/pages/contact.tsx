@@ -17,6 +17,10 @@ export default function Contact() {
       `mailto:asem@qaffaf.com?subject=From: ${email}-${subject}&body=${message}`,
     );
     emailRef.current?.click();
+    // reset values
+    (e.currentTarget.elements[0] as HTMLInputElement).value = "";
+    (e.currentTarget.elements[1] as HTMLInputElement).value = "";
+    (e.currentTarget.elements[2] as HTMLInputElement).value = "";
   };
   return (
     <div className="h-full w-screen bg-white pt-24 dark:bg-gray-900 overflow-scroll">
