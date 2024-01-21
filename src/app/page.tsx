@@ -2,7 +2,7 @@
 
 import { useSearchParams } from "next/navigation";
 import type { RefObject } from "react";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import ReactPageScroller from "react-page-scroller";
 
 import Footer from "./components/organisms/footer";
@@ -15,6 +15,8 @@ import PortfolioSecondPage from "./components/pages/portfolio-second-page";
 
 export default function App(): React.JSX.Element {
   const searchParams = useSearchParams();
+  const [currentScroll, setCurrentScroll] = useState<number>(0);
+
   const bannerRef = useRef<HTMLDivElement>(null);
   const aboutRef = useRef<HTMLDivElement>(null);
   const portfolioRef = useRef<HTMLDivElement>(null);
@@ -28,7 +30,15 @@ export default function App(): React.JSX.Element {
     });
   };
 
+  const getCustomPageNumber = () => {
+    const navNumber: string = searchParams?.get("nav") || "0";
+    return Number(navNumber > "2" ? 4 : navNumber) || 0;
+  };
+
   useEffect(() => {
+    const pageNumber = getCustomPageNumber();
+    setCurrentScroll(pageNumber);
+
     const navNumber = searchParams?.get("nav");
 
     switch (navNumber) {
@@ -49,6 +59,7 @@ export default function App(): React.JSX.Element {
         break;
     }
   }, [searchParams]);
+
   return (
     <>
       <div className="flex w-screen flex-col lg:hidden">
@@ -73,7 +84,7 @@ export default function App(): React.JSX.Element {
       <div className="hidden w-screen lg:flex">
         <ReactPageScroller
           renderAllPagesOnFirstRender={false}
-          customPageNumber={Number(searchParams?.get("nav")) || 0}
+          customPageNumber={currentScroll}
         >
           <HomePage />
           <About />

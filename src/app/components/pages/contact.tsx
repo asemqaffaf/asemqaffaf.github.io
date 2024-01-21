@@ -1,16 +1,22 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import type { FormEvent } from "react";
+import { type FormEvent, useRef } from "react";
 import { useTranslation } from "react-i18next";
 
 export default function Contact() {
   const { t } = useTranslation();
+  const emailRef = useRef<HTMLAnchorElement>(null);
 
   const submitContactForm = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // const email = (e.currentTarget.elements[0] as HTMLInputElement).value;
-    // const subject = (e.currentTarget.elements[1] as HTMLInputElement).value;
-    // const message = (e.currentTarget.elements[2] as HTMLInputElement).value;
-    // console.log({ email, subject, message });
+    const email = (e.currentTarget.elements[0] as HTMLInputElement).value;
+    const subject = (e.currentTarget.elements[1] as HTMLInputElement).value;
+    const message = (e.currentTarget.elements[2] as HTMLInputElement).value;
+
+    emailRef.current?.setAttribute(
+      "href",
+      `mailto:asem@qaffaf.com?subject=From: ${email}-${subject}&body=${message}`,
+    );
+    emailRef.current?.click();
   };
   return (
     <div className="h-full w-screen bg-white pt-24 dark:bg-gray-900 overflow-scroll">
@@ -76,6 +82,13 @@ export default function Contact() {
               </span>
             </button>
           </form>
+          <a
+            ref={emailRef}
+            href="mailto:asem@qaffaf.com?subject=Mail from My Site"
+            className="hidden"
+          >
+            mail to
+          </a>
         </div>
       </section>
     </div>
