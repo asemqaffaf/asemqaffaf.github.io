@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /*
+Allow: /
+
+Sitemap: https://asemqaffaf.github.io/sitemap.xml

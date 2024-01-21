@@ -2,12 +2,12 @@
 
 import React from "react";
 
-import About from "@/app/components/pages/about";
+import Portfolio from "@/app/components/pages/portfolio";
 
 export default function page() {
   return (
     <div className="h-full w-screen">
-      <About />
+      <Portfolio />
     </div>
   );
 }

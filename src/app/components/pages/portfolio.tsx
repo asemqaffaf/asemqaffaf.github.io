@@ -20,7 +20,7 @@ export default function Portfolio() {
               height={800}
               className="h-auto max-w-full rounded-lg bg-white transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
               src="/images/companies/expedia-group.webp"
-              alt=""
+              alt="expedia group"
             />
           </div>
           <div>
@@ -29,7 +29,7 @@ export default function Portfolio() {
               height={500}
               className="h-auto max-w-full rounded-lg bg-white transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
               src="/images/companies/ntt-docomo.jpg"
-              alt=""
+              alt="ntt-docomo"
             />
           </div>
           <div>
@@ -38,7 +38,7 @@ export default function Portfolio() {
               height={500}
               className="h-auto max-w-full   rounded-lg bg-white transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
               src="/images/companies/orange.svg.png"
-              alt=""
+              alt="orange"
             />
           </div>
           <div>
@@ -58,7 +58,7 @@ export default function Portfolio() {
               height={500}
               className="h-auto max-w-full rounded-lg bg-white transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
               src="/images/companies/benesse.jpg"
-              alt=""
+              alt="benesse"
             />
           </div>
           <div>
@@ -67,7 +67,7 @@ export default function Portfolio() {
               height={500}
               className="h-auto max-w-full   rounded-lg bg-white transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
               src="/images/companies/wired-jp.jpg"
-              alt=""
+              alt="wired japan"
             />
           </div>
           <div>
@@ -76,7 +76,7 @@ export default function Portfolio() {
               height={500}
               className="h-auto max-w-full rounded-lg bg-white transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
               src="/images/companies/ww.jpg"
-              alt=""
+              alt="ww"
             />
           </div>
 
@@ -86,7 +86,7 @@ export default function Portfolio() {
               height={500}
               className="h-auto max-w-full rounded-lg bg-white transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
               src="/images/companies/stricktly-data.png"
-              alt=""
+              alt="stricktly-data"
             />
           </div>
         </div>
@@ -97,7 +97,7 @@ export default function Portfolio() {
               height={500}
               className="h-auto max-w-full rounded-lg bg-white transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
               src="/images/companies/expedia.png"
-              alt=""
+              alt="expedia"
             />
           </div>
           <div>
@@ -106,7 +106,7 @@ export default function Portfolio() {
               height={500}
               className="h-auto max-w-full   rounded-lg bg-white transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
               src="/images/companies/open-garden.png"
-              alt=""
+              alt="open-garden"
             />
           </div>
           <div>
@@ -115,7 +115,7 @@ export default function Portfolio() {
               height={500}
               className="h-auto max-w-full rounded-lg bg-white transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
               src="/images/companies/nrby.png"
-              alt=""
+              alt="nrby"
             />
           </div>
           <div>
@@ -124,7 +124,7 @@ export default function Portfolio() {
               height={500}
               className="h-auto max-w-full rounded-lg bg-white transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
               src="/images/companies/ripe.png"
-              alt=""
+              alt="ripe"
             />
           </div>
         </div>
@@ -135,7 +135,7 @@ export default function Portfolio() {
               height={500}
               className="h-auto max-w-full rounded-lg bg-white transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
               src="/images/companies/vtex.png"
-              alt=""
+              alt="vtex"
             />
           </div>
 
@@ -145,7 +145,7 @@ export default function Portfolio() {
               height={500}
               className="h-auto max-w-full rounded-lg bg-white transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
               src="/images/companies/brick.jpeg"
-              alt=""
+              alt="brick"
             />
           </div>
           <div>
@@ -154,7 +154,7 @@ export default function Portfolio() {
               height={500}
               className="h-auto max-w-full rounded-lg bg-white transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
               src="/images/companies/wired-jp-share.jpg"
-              alt=""
+              alt="wired-jp"
             />
           </div>
 
@@ -164,7 +164,7 @@ export default function Portfolio() {
               height={500}
               className="h-auto max-w-full rounded-lg bg-white transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
               src="/images/companies/ATG-Logo.png"
-              alt=""
+              alt="ATG"
             />
           </div>
         </div>

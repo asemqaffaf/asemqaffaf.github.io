@@ -24,6 +24,8 @@ export default function Contact() {
   };
   return (
     <div className="h-full w-screen bg-white pt-24 dark:bg-gray-900 overflow-scroll">
+      <h1 className="hidden">Asem Qaffaf</h1>
+      <h1 className="hidden">Full stack software engineer</h1>
       <section className="bg-white dark:bg-gray-900 h-full w-full overflow-scroll">
         <div className="px-[20%] pb-4 ">
           <h2 className="mb-4 text-center text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white">
