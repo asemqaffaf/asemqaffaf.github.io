@@ -59,7 +59,7 @@
 
 .card-container .card-card .card-imgBx {
   position: absolute;
-  z-index: 10000;
+  z-index: 40;
 
   top: 15%;
   /* right: 0%;
