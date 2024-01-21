@@ -21,20 +21,20 @@ const Header = () => {
       />
       <meta
         property="og:title"
-        content="Electric  Solar &amp; Clean Energy | Asem Qaffaf"
+        content="Engineer  Software &amp; Development | Asem Qaffaf"
       />
 
       <meta
         property="og:image"
-        content="https://digitalassets-secure.tesla.com/image/upload/f_auto,q_auto/u0rokaqwf96h79cdkfot.jpg"
+        content="https://asemqaffaf.github.io/images/asem.png"
       />
       <meta
         property="og:image:url"
-        content="https://digitalassets-secure.tesla.com/image/upload/f_auto,q_auto/u0rokaqwf96h79cdkfot.jpg"
+        content="https://asemqaffaf.github.io/images/asem.png"
       />
       <meta
         property="og:image:secure_url"
-        content="https://digitalassets-secure.tesla.com/image/upload/f_auto,q_auto/u0rokaqwf96h79cdkfot.jpg"
+        content="https://asemqaffaf.github.io/images/asem.png"
       />
       <meta
         property="og:image:alt"
@@ -49,7 +49,7 @@ const Header = () => {
       <meta name="twitter:image:alt" content="Asem Qaffaf logo" />
       <meta
         name="twitter:image"
-        content="https://digitalassets-secure.tesla.com/image/upload/f_auto,q_auto/u0rokaqwf96h79cdkfot.jpg"
+        content="https://asemqaffaf.github.io/images/asem.png"
       />
 
       <meta name="MobileOptimized" content="width" />
@@ -339,7 +339,7 @@ const Header = () => {
 
       <link
         rel="icon"
-        href="/themes/custom/tesla_frontend/assets/favicons/favicon.ico"
+        href="/images/logo/favicon.ico"
         type="image/vnd.microsoft.icon"
       />
 
