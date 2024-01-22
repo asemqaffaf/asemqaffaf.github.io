@@ -10,7 +10,7 @@ const NewsSkeleton = () => {
         <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 mb-2.5" />
         <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700" />
 
-        <div className="flex w-1/4 items-center justify-center h-48 my-4 bg-gray-300 rounded dark:bg-gray-700">
+        <div className="flex h-48 w-5/6 md:w-2/4 items-center justify-center  my-4 bg-gray-300 rounded dark:bg-gray-700">
           <svg
             className="w-10 h-10 text-gray-200 dark:text-gray-600"
             aria-hidden="true"
