@@ -79,7 +79,10 @@ const Nav = (): React.JSX.Element => {
             className={`${isLanguageMenuOpen ? "hidden md:flex" : "hidden"}  show absolute top-10 z-50 my-4 list-none divide-y divide-gray-100 rounded-lg bg-white text-base shadow dark:bg-zinc-800`}
             id="language-dropdown-menu"
           >
-            <LanguageList />
+            <LanguageList
+              setIsLanguageMenuOpen={setIsLanguageMenuOpen}
+              setIsMobileMenuOpen={setIsMobileMenuOpen}
+            />
           </div>
           <button
             data-collapse-toggle="navbar-language"
@@ -140,7 +143,10 @@ const Nav = (): React.JSX.Element => {
             })}
           </ul>
           <div className="flex items-center justify-center md:hidden">
-            <LanguageList />
+            <LanguageList
+              setIsLanguageMenuOpen={setIsLanguageMenuOpen}
+              setIsMobileMenuOpen={setIsMobileMenuOpen}
+            />
           </div>
         </div>
       </div>

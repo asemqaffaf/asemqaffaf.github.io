@@ -1,13 +1,22 @@
+import type { Dispatch, SetStateAction } from "react";
 import { useTranslation } from "react-i18next";
 
 import type { LanguageType } from "@/util/nav-items";
 import { languagesList } from "@/util/nav-items";
 
-export default function LanguageList() {
+export default function LanguageList({
+  setIsLanguageMenuOpen,
+  setIsMobileMenuOpen,
+}: {
+  setIsLanguageMenuOpen: Dispatch<SetStateAction<boolean>>;
+  setIsMobileMenuOpen: Dispatch<SetStateAction<boolean>>;
+}) {
   const { i18n } = useTranslation();
 
   const changeLanguage = (language: LanguageType) => {
     i18n.changeLanguage(language);
+    setIsLanguageMenuOpen(false);
+    setIsMobileMenuOpen(false);
   };
 
   return (

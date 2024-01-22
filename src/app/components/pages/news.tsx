@@ -1,6 +1,8 @@
 "use client";
 
 import Image from "next/image";
+import { useMemo } from "react";
+import { useTranslation } from "react-i18next";
 
 import useFetch from "@/hooks/useFetch";
 
@@ -31,9 +33,23 @@ type FeedsType = {
 };
 
 export default function News() {
-  const { data, isLoading, error } = useFetch<FeedsType>(
-    "https://rss.app/feeds/v1.1/tcnSFGyTQkKaMhMq.json",
-  );
+  const {
+    i18n: { language },
+  } = useTranslation();
+  const url = useMemo(() => {
+    switch (language) {
+      case "en":
+        return process.env.NEXT_PUBLIC_WIRED_RSS_ENGLISH;
+      case "jp":
+        return process.env.NEXT_PUBLIC_WIRED_RSS_JAPANESE;
+      case "ar":
+        return process.env.NEXT_PUBLIC_WIRED_RSS_ARABIC;
+      default:
+        return process.env.NEXT_PUBLIC_WIRED_RSS_ENGLISH;
+    }
+  }, [language]);
+
+  const { data, isLoading, error } = useFetch<FeedsType>(url as string);
 
   return isLoading || error ? (
     <div className="h-full w-screen py-24 px-5 border-white bg-white  dark:bg-gray-900">
@@ -49,7 +65,10 @@ export default function News() {
             <li className="mb-10 ms-4" key={item.id}>
               <div className="absolute -start-1.5 mt-1.5 h-3 w-3 rounded-full border border-white bg-gray-200 dark:border-gray-900 dark:bg-gray-700" />
               <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-                {new Date(item.date_published).toLocaleTimeString()}
+                {new Date(item.date_published).toLocaleTimeString([], {
+                  hour: "2-digit",
+                  minute: "2-digit",
+                })}
               </time>
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
                 {item.title}
