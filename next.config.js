@@ -19,6 +19,7 @@ const nextConfig = {
    */
   images: {
     unoptimized: true,
+    domains: ["https://media.wired.com/"],
   },
   compiler: {
     removeConsole: true,
