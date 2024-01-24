@@ -23,6 +23,7 @@ const Nav = (): React.JSX.Element => {
       const params = new URLSearchParams(searchParams.toString());
       params.set(name, value);
 
+      setIsMobileMenuOpen(false);
       return params.toString();
     },
     [searchParams],
@@ -34,6 +35,7 @@ const Nav = (): React.JSX.Element => {
       router.push(
         `${pathname}?${createQueryString("nav", navNumber.toString())}`,
       );
+      setIsMobileMenuOpen(false);
     },
     [createQueryString, router],
   );
@@ -121,6 +123,7 @@ const Nav = (): React.JSX.Element => {
                 return (
                   <li key={item.name}>
                     <Link
+                      onClick={() => setIsMobileMenuOpen(false)}
                       href={item.href}
                       className={`${i < navigationElements.length - 1 && "mb-5"} md:mb-0`}
                     >
