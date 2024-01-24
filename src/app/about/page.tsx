@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import About from "@/app/components/pages/about";
+import About from "@/components/pages/about";
 
 export default function page() {
   return (

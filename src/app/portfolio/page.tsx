@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import Portfolio from "@/app/components/pages/portfolio";
+import Portfolio from "@/components/pages/portfolio";
 
 export default function page() {
   return (

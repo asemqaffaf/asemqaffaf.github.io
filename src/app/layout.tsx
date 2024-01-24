@@ -12,8 +12,8 @@ import { usePathname } from "next/navigation";
 import { appWithTranslation, useTranslation } from "next-i18next";
 import { Client, HydrationProvider } from "react-hydration-provider";
 
-import Footer from "./components/organisms/footer";
-import Nav from "./components/organisms/nav";
+import Footer from "../components/organisms/footer";
+import Nav from "../components/organisms/nav";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -25,7 +25,7 @@ const calSans = LocalFont({
   variable: "--font-calsans",
 });
 
-const DynamicHeader = dynamic(() => import("./components/organisms/header"));
+const DynamicHeader = dynamic(() => import("../components/organisms/header"));
 
 function RootLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();

@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import Contact from "@/app/components/pages/contact";
+import Contact from "@/components/pages/contact";
 
 export default function page() {
   return (

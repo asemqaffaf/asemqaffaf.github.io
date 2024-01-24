@@ -1,11 +1,22 @@
 import { useEffect, useState } from "react";
 
-function useFetch<T>(url: string) {
+/**
+ * @description Why We Need React Query
+ * @ref https://tkdodo.eu/blog/why-you-want-react-query
+ * @param url string
+ * @returns { data: T ; isLoading: boolean; error: unknown; }
+ */
+function useFetch<T>(url: string): {
+  data: T | undefined;
+  isLoading: boolean;
+  error: unknown;
+} {
   const [data, setData] = useState<T>();
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<unknown>(null);
 
   useEffect(() => {
+    let ignore = false;
     fetch(url)
       .then((response) => {
         if (!response.ok) {
@@ -15,14 +26,23 @@ function useFetch<T>(url: string) {
         return response.json();
       })
       .then((res: T) => {
-        setIsLoading(false);
-        setData(res);
-        setError(null);
+        if (!ignore) {
+          setData(res);
+          setError(undefined);
+        }
       })
       .catch((err) => {
+        if (!ignore) {
+          setError(err.message);
+          setData(undefined);
+        }
+      })
+      .finally(() => {
         setIsLoading(false);
-        setError(err.message);
       });
+    return () => {
+      ignore = true;
+    };
   }, [url]);
 
   return { data, isLoading, error };

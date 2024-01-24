@@ -31,7 +31,7 @@
 import React from "react";
 import Typewriter from "typewriter-effect";
 
-import { FooterWithSitemap } from "@/app/components/molecules/footer-sitemap";
+import { FooterWithSitemap } from "@/components/molecules/footer-sitemap";
 import { typeWriteList } from "@/constants";
 
 const randomTypeWriteList = typeWriteList.sort(() => 0.5 - Math.random());
