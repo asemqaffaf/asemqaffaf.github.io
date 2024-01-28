@@ -91,7 +91,7 @@ export default function App(): React.JSX.Element {
           <Portfolio />
           <PortfolioSecondPage />
           <Contact />
-          <Footer homeScreen />
+          <Footer />
         </ReactPageScroller>
       </div>
     </>
