@@ -1,31 +1,3 @@
-// "use client";
-
-// import React from "react";
-// import Typewriter from "typewriter-effect";
-
-// import { FooterWithSitemap } from "@/app/components/molecules/footer-sitemap";
-// import { typeWriteList } from "@/constants";
-
-// const randomTypeWriteList = typeWriteList.sort(() => 0.5 - Math.random());
-// export default function Footer() {
-//   return (
-//     <div className="flex flex-col justify-center">
-//       <div className="hidden h-[70%] w-full items-center sm:flex md:flex sm:mt-20 md:mt-0">
-//         <div className="flex h-80 items-center justify-center text-4xl font-extralight text-zinc-100 sm:text-5xl md:text-8xl">
-//           <Typewriter
-//             options={{
-//               strings: randomTypeWriteList,
-//               autoStart: true,
-//               loop: true,
-//             }}
-//           />
-//         </div>
-//       </div>
-//       <FooterWithSitemap />
-//     </div>
-//   );
-// }
-
 "use client";
 
 import React from "react";
@@ -35,17 +7,11 @@ import { FooterWithSitemap } from "@/components/molecules/footer-sitemap";
 import { typeWriteList } from "@/constants";
 
 const randomTypeWriteList = typeWriteList.sort(() => 0.5 - Math.random());
-export default function Footer({
-  homeScreen = false,
-}: {
-  homeScreen?: boolean;
-}) {
+export default function Footer() {
   return (
-    <div
-      className={`flex flex-col ${homeScreen ? "h-screen" : ""}  justify-center`}
-    >
-      <div className="hidden h-2/6 md:h-1/4 lg:h-2/4 w-full items-center sm:flex md:flex ">
-        <div className="text-4xl h-80 font-extralight flex justify-center items-center text-zinc-100 sm:text-5xl md:text-4xl lg:text-8xl">
+    <div className="flex h-auto flex-col justify-center md:h-screen">
+      <div className="hidden h-2/6 w-full items-center sm:flex md:flex md:h-1/4 lg:h-2/4 ">
+        <div className="flex h-80 items-center justify-center text-4xl font-extralight text-zinc-100 sm:text-5xl md:text-4xl lg:text-8xl">
           <Typewriter
             options={{
               strings: randomTypeWriteList,
@@ -55,7 +21,7 @@ export default function Footer({
           />
         </div>
       </div>
-      <div className="h-4/6 md:h-3/4 lg:h-2/4  w-full">
+      <div className="h-4/6 w-full md:h-3/4 lg:h-2/4">
         <FooterWithSitemap />
       </div>
     </div>
