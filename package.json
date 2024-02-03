@@ -32,6 +32,7 @@
     "react-hydration-provider": "^2.1.0",
     "react-i18next": "^14.0.0",
     "react-page-scroller": "^3.0.1",
+    "rss-parser": "^3.13.0",
     "signals-react-safe": "^1.1.2",
     "ts-jest": "^29.1.1",
     "typewriter-effect": "^2.21.0"

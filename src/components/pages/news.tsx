@@ -1,11 +1,12 @@
 "use client";
 
-import Image from "next/image";
+// import Image from "next/image";
 import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
-import useFetch from "@/hooks/useFetch";
+import useRssParser from "@/hooks/useRssParser";
 
+// import useFetch from "@/hooks/useFetch";
 import NewsSkeleton from "../molecules/newsSkeleton";
 
 type FeedsType = {
@@ -19,6 +20,9 @@ type FeedsType = {
 
   items: [
     {
+      link: string | undefined;
+      pubDate: string | number | Date;
+      content: string;
       id: string;
       url: string;
       title: string;
@@ -28,6 +32,7 @@ type FeedsType = {
       date_published: string;
       authors: [{ name: string }];
       attachments: string;
+      "dc:creator": string;
     },
   ];
 };
@@ -49,7 +54,7 @@ export default function News() {
     }
   }, [language]);
 
-  const { data, isLoading, error } = useFetch<FeedsType>(url as string);
+  const { data, isLoading, error } = useRssParser<FeedsType>(url as string);
 
   return isLoading || error ? (
     <div className="h-full w-screen py-24 px-5 border-white bg-white  dark:bg-gray-900">
@@ -65,25 +70,29 @@ export default function News() {
             <li className="mb-10 ms-4" key={item.id}>
               <div className="absolute -start-1.5 mt-1.5 h-3 w-3 rounded-full border border-white bg-gray-200 dark:border-gray-900 dark:bg-gray-700" />
               <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-                {new Date(item.date_published).toLocaleTimeString([], {
+                {new Date(item.pubDate).toLocaleTimeString([], {
                   hour: "2-digit",
                   minute: "2-digit",
+                  timeZone: "UTC",
                 })}
               </time>
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
                 {item.title}
               </h3>
-              <Image
+              {/* <Image
                 width={400}
                 height={400}
                 className="h-auto rounded-lg bg-white transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
                 src={item.image}
                 alt={item.title}
-              />
-              <p className="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
-                {item.content_text}
+              /> */}
+              <p className="mb-4 w-3/4 text-base font-normal text-gray-500 lg:w-2/4 dark:text-gray-400">
+                <div dangerouslySetInnerHTML={{ __html: item.content }} />
               </p>
-              {item.authors.map((author) => (
+              <p className="mb-2  text-sm font-normal text-gray-500 dark:text-gray-400">
+                {item["dc:creator"]}
+              </p>
+              {item?.authors?.map((author) => (
                 <p
                   className="mb-2  text-sm font-normal text-gray-500 dark:text-gray-400"
                   key={author.name}
@@ -92,13 +101,13 @@ export default function News() {
                 </p>
               ))}
               <a
-                href={item.url}
+                href={item.link}
                 target="_blank"
-                className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-200 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+                className="inline-flex items-center rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:text-blue-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700"
               >
                 Learn more{" "}
                 <svg
-                  className="w-3 h-3 ms-2 rtl:rotate-180"
+                  className="ms-2 h-3 w-3 rtl:rotate-180"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
