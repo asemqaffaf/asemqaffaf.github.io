@@ -31,14 +31,13 @@ function RootLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const { i18n } = useTranslation();
 
+  if (typeof window !== "undefined") {
+    document.body.dir = i18n.dir();
+  }
+
   return (
     <html
       lang={i18n.language || "en"}
-      dir={
-        typeof window !== "undefined"
-          ? localStorage?.getItem("dir") || "ltr"
-          : "lrt"
-      }
       className={[inter.variable, calSans.variable].join(" ")}
     >
       <head>
