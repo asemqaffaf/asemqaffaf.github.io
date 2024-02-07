@@ -15,7 +15,7 @@ export default function LanguageList({
 
   const changeLanguage = (language: LanguageType) => {
     i18n.changeLanguage(language);
-    localStorage.setItem("dir", language === "ar" ? "rtl" : "ltr");
+    localStorage?.setItem("dir", language === "ar" ? "rtl" : "ltr");
     setIsLanguageMenuOpen(false);
     setIsMobileMenuOpen(false);
   };

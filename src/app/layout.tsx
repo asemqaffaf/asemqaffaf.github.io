@@ -34,7 +34,11 @@ function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
       lang={i18n.language || "en"}
-      dir={localStorage.getItem("dir") || "ltr"}
+      dir={
+        typeof window !== "undefined"
+          ? localStorage?.getItem("dir") || "ltr"
+          : "lrt"
+      }
       className={[inter.variable, calSans.variable].join(" ")}
     >
       <head>
