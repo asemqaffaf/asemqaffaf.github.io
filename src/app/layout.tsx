@@ -34,7 +34,7 @@ function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
       lang={i18n.language || "en"}
-      dir={i18n.language === "ar" ? "rtl" : "ltr"}
+      dir={localStorage.getItem("dir") || "ltr"}
       className={[inter.variable, calSans.variable].join(" ")}
     >
       <head>
