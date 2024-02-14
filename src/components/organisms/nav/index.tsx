@@ -41,6 +41,7 @@ const Nav = (): React.JSX.Element => {
   );
 
   const toggleLanguageMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
     setIsLanguageMenuOpen(!isLanguageMenuOpen);
   };
 
@@ -119,19 +120,6 @@ const Nav = (): React.JSX.Element => {
         >
           <ul className="mt-4 flex flex-col rounded-lg border border-gray-100 bg-gray-50 p-4 font-medium md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-white md:p-0 rtl:space-x-reverse dark:bg-zinc-800 md:dark:bg-zinc-800">
             {navigationElements.map((item, i) => {
-              if (item.name === "news") {
-                return (
-                  <li key={item.name}>
-                    <Link
-                      onClick={() => setIsMobileMenuOpen(false)}
-                      href={item.href}
-                      className={`${i < navigationElements.length - 1 && "mb-5"} md:mb-0`}
-                    >
-                      {t(`nav.element.${item.name}`)}
-                    </Link>
-                  </li>
-                );
-              }
               return (
                 <li key={item.name}>
                   <button

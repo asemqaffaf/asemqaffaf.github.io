@@ -82,22 +82,22 @@ export function FooterWithSitemap() {
                     {t("footer.element.col-1-2")}
                   </Link>
                 </li>
-                <li className="mb-4">
+                {/* <li className="mb-4">
                   <Link
                     href="/?nav=4"
                     className="text-zinc-400 duration-700 hover:text-black   dark:hover:text-white"
                   >
                     {t("footer.element.col-1-3")}
                   </Link>
-                </li>
-                <li className="mb-4">
+                </li> */}
+                {/* <li className="mb-4">
                   <Link
                     href="/?nav=4"
                     className="text-zinc-400 duration-700 hover:text-black   dark:hover:text-white"
                   >
                     {t("footer.element.col-1-4")}
                   </Link>
-                </li>
+                </li> */}
                 <li>
                   <Link
                     href="/?nav=4"
@@ -124,7 +124,7 @@ export function FooterWithSitemap() {
                 </li>
                 <li className="mb-4">
                   <a
-                    href="https://linkedin.com/in/asem-qaffaf-🍉-75b541199/"
+                    href="https://linkedin.com/in/asem-qaffaf-75b541199/"
                     target="_blank"
                     className="text-zinc-400 duration-700 hover:text-black   dark:hover:text-white"
                   >
@@ -183,25 +183,25 @@ export function FooterWithSitemap() {
           <span className="mb-5 text-sm text-gray-500 sm:text-center md:mb-0 dark:text-gray-400">
             © {new Date().getFullYear()} {t("footer.element.copyrights")}
           </span>
-          <div className="mt-4 flex flex-col items-center sm:mt-0 sm:flex-row sm:items-start sm:justify-center ">
+          <div className="mt-8 flex flex-row items-center sm:mt-0 sm:flex-row sm:items-start sm:justify-center ">
             <a
               href="https://facebook.com/asemqaffaf"
               target="_blank"
               className="text-gray-500 duration-700 hover:text-gray-900 dark:hover:text-white"
             >
               <FontAwesomeIcon
-                className="mb-10 size-24 md:mb-0 md:size-5"
+                className="mb-10 size-12 md:mb-0 md:size-5"
                 icon={faFacebookF}
               />
               <span className="sr-only">Facebook page</span>
             </a>
             <a
-              href="https://www.linkedin.com/in/asem-qaffaf-🍉-75b541199/"
+              href="https://www.linkedin.com/in/asem-qaffaf-75b541199/"
               target="_blank"
               className="ms-5 text-gray-500 duration-700 hover:text-gray-900 dark:hover:text-white"
             >
               <FontAwesomeIcon
-                className="mb-10 size-24 md:mb-0 md:size-5"
+                className="mb-10 size-12 md:mb-0 md:size-5"
                 icon={faLinkedinIn}
               />
               <span className="sr-only">LinkedIn</span>
@@ -212,7 +212,7 @@ export function FooterWithSitemap() {
               className="ms-5 text-gray-500 duration-700 hover:text-gray-900 dark:hover:text-white"
             >
               <FontAwesomeIcon
-                className="mb-10 size-24 md:mb-0 md:size-5"
+                className="mb-10 size-12 md:mb-0 md:size-5"
                 icon={faXTwitter}
               />
               <span className="sr-only">X Twitter</span>
@@ -223,7 +223,7 @@ export function FooterWithSitemap() {
               className="ms-5 text-gray-500 duration-700 hover:text-gray-900 dark:hover:text-white"
             >
               <FontAwesomeIcon
-                className="mb-10 size-24 md:mb-0 md:size-5"
+                className="mb-10 size-12 md:mb-0 md:size-5"
                 icon={faGithub}
               />
               <span className="sr-only">GitHub</span>
