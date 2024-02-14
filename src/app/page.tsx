@@ -77,7 +77,10 @@ export default function App(): React.JSX.Element {
           <Contact />
         </div>
 
-        <div id="footer-main" className="h-screen w-screen">
+        <div
+          id="footer-main"
+          className="h-screen w-screen  bg-white dark:bg-zinc-800 md:bg-transparent"
+        >
           <Footer />
         </div>
       </div>

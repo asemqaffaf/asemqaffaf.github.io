@@ -14,7 +14,7 @@ import { useTranslation } from "react-i18next";
 export function FooterWithSitemap() {
   const { t } = useTranslation();
   return (
-    <footer className="flex h-full overflow-scroll bg-white lg:items-center dark:bg-zinc-800">
+    <footer className="flex h-full w-full overflow-scroll bg-white lg:items-center dark:bg-zinc-800">
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8  ">
         <div className="items-center md:flex md:justify-between">
           <div className="mb-6 flex flex-col md:mb-0">
