@@ -79,7 +79,7 @@ export default function App(): React.JSX.Element {
 
         <div
           id="footer-main"
-          className="h-screen w-screen  bg-white dark:bg-zinc-800 md:bg-transparent"
+          className="h-screen w-screen  bg-white dark:bg-zinc-800 sm:bg-transparent"
         >
           <Footer />
         </div>
