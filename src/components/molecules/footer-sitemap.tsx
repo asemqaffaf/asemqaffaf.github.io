@@ -60,10 +60,7 @@ export function FooterWithSitemap() {
               </div>
             </Link> */}
           </div>
-          <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 sm:gap-6">
-            <div>
-              <div className="font-light text-gray-500 dark:text-gray-400" />
-            </div>
+          <div className="grid grid-cols-2 gap-8 sm:grid-cols-2 sm:gap-6">
             <div>
               <h2 className="m-[-1px] mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-white">
                 {t("footer.element.col-2-title")}
