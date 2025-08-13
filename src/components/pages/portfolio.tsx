@@ -142,7 +142,7 @@ export default function Portfolio() {
     <div className="min-h-screen w-full bg-gradient-to-b pt-24">
       <div className="container mx-auto px-4">
         <div className="flex w-full justify-center">
-          <h1 className="text-nowrap bg-clip-text px-4 pb-10 text-center text-4xl font-light text-white  md:text-5xl lg:text-6xl">
+          <h1 className="bg-clip-text px-4 pb-10 text-center text-4xl font-light text-white  md:text-5xl lg:text-6xl">
             {t("page.Portfolio.title")}
           </h1>
         </div>
