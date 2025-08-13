@@ -56,7 +56,7 @@ export default function News() {
   const { data, isLoading, error } = useFetch<FeedsType>(url as string);
 
   return isLoading || error ? (
-    <div className="h-full w-screen py-24 px-5 border-white bg-white  dark:bg-gray-900">
+    <div className="h-full w-screen border-white bg-white px-5 py-24  dark:bg-gray-900">
       <NewsSkeleton />
       <NewsSkeleton />
       <NewsSkeleton />

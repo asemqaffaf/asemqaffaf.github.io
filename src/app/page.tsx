@@ -1,72 +1,38 @@
 "use client";
 
-import { useSearchParams } from "next/navigation";
-import type { RefObject } from "react";
-import React, { useEffect, useRef, useState } from "react";
-import ReactPageScroller from "react-page-scroller";
+import React, { useRef } from "react";
+
+import Nav from "@/components/organisms/nav";
 
 import Footer from "../components/organisms/footer";
-// import Nav from "./components/organisms/nav";
 import About from "../components/pages/about";
 import Contact from "../components/pages/contact";
 import HomePage from "../components/pages/home-page";
 import Portfolio from "../components/pages/portfolio";
-import PortfolioSecondPage from "../components/pages/portfolio-second-page";
 
 export default function App(): React.JSX.Element {
-  const searchParams = useSearchParams();
-  const [currentScroll, setCurrentScroll] = useState<number>(0);
-
   const bannerRef = useRef<HTMLDivElement>(null);
   const aboutRef = useRef<HTMLDivElement>(null);
   const portfolioRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
 
-  const scrollIntoView = (ref: RefObject<HTMLDivElement>) => {
-    ref.current?.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-      inline: "nearest",
-    });
-  };
-
-  const getCustomPageNumber = () => {
-    const navNumber: string = searchParams?.get("nav") || "0";
-    return Number(navNumber > "2" ? 4 : navNumber) || 0;
-  };
-
-  useEffect(() => {
-    const pageNumber = getCustomPageNumber();
-    setCurrentScroll(pageNumber);
-
-    const navNumber = searchParams?.get("nav");
-
-    switch (navNumber) {
-      case "0":
-        scrollIntoView(bannerRef);
-        break;
-      case "1":
-        scrollIntoView(aboutRef);
-        break;
-      case "2":
-        scrollIntoView(portfolioRef);
-        break;
-      case "3":
-        scrollIntoView(contactRef);
-        break;
-
-      default:
-        break;
-    }
-  }, [searchParams]);
-
   return (
     <>
+      <Nav
+        bannerRef={bannerRef}
+        aboutRef={aboutRef}
+        portfolioRef={portfolioRef}
+        contactRef={contactRef}
+      />
       <div className="flex w-screen flex-col lg:hidden">
         <div ref={bannerRef} className="h-screen w-screen">
           <HomePage />
         </div>
-        <div ref={aboutRef} className="h-screen w-screen">
+        <div
+          ref={aboutRef}
+          className="lg:min-w-screen lg:min-h-screen"
+          id="#about-main"
+        >
           <About />
         </div>
 
@@ -79,23 +45,27 @@ export default function App(): React.JSX.Element {
 
         <div
           id="footer-main"
-          className="h-screen w-screen  bg-white dark:bg-zinc-800 sm:bg-transparent"
+          className="h-screen w-screen  bg-white sm:bg-transparent dark:bg-zinc-800"
         >
           <Footer />
         </div>
       </div>
-      <div className="hidden w-screen lg:flex">
-        <ReactPageScroller
-          renderAllPagesOnFirstRender={false}
-          customPageNumber={currentScroll}
-        >
+      <div className="hidden w-screen snap-y snap-mandatory flex-col overflow-y-auto lg:flex">
+        <section ref={bannerRef} className="h-screen snap-start">
           <HomePage />
+        </section>
+        <section ref={aboutRef} className="min-h-screen snap-start">
           <About />
+        </section>
+        <section ref={portfolioRef} className="min-h-screen snap-start">
           <Portfolio />
-          <PortfolioSecondPage />
+        </section>
+        <section ref={contactRef} className="min-h-screen snap-start">
           <Contact />
+        </section>
+        <section className="min-h-screen snap-start">
           <Footer />
-        </ReactPageScroller>
+        </section>
       </div>
     </>
   );

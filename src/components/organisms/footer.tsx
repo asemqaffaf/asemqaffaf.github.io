@@ -21,7 +21,7 @@ export default function Footer() {
           />
         </div>
       </div>
-      <div className="h-3/6 w-full md:h-3/4 lg:h-2/4 self-end">
+      <div className="h-3/6 w-full self-end md:h-3/4 lg:h-2/4">
         <FooterWithSitemap />
       </div>
     </div>

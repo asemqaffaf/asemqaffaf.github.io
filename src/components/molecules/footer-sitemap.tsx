@@ -26,7 +26,7 @@ export function FooterWithSitemap() {
 
             <a href="tel:+817092831954">
               <div className="mt-4 mb-1 flex flex-col font-light text-gray-500 duration-700  hover:text-black dark:text-gray-400   dark:hover:text-white">
-                <span className=" mb-1">Tel: +81 70 9283 1954</span>
+                <span className=" mb-1">Tel: +81 70 9236 2347</span>
               </div>
             </a>
             <a href="mailto:asem@qaffaf.com?subject=Mail from My Site">
@@ -62,51 +62,7 @@ export function FooterWithSitemap() {
           </div>
           <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 sm:gap-6">
             <div>
-              <h2 className="m-[-1px] mb-5 text-sm font-semibold uppercase text-gray-900 dark:text-white">
-                {t("footer.element.col-1-title")}
-              </h2>
-              <ul className="font-light text-gray-500 dark:text-gray-400">
-                <li className="mb-4">
-                  <Link
-                    href="/?nav=1"
-                    className="text-zinc-400 duration-700 hover:text-black   dark:hover:text-white"
-                  >
-                    {t("footer.element.col-1-1")}
-                  </Link>
-                </li>
-                <li className="mb-4">
-                  <Link
-                    href="/?nav=2"
-                    className="text-zinc-400 duration-700 hover:text-black   dark:hover:text-white"
-                  >
-                    {t("footer.element.col-1-2")}
-                  </Link>
-                </li>
-                {/* <li className="mb-4">
-                  <Link
-                    href="/?nav=4"
-                    className="text-zinc-400 duration-700 hover:text-black   dark:hover:text-white"
-                  >
-                    {t("footer.element.col-1-3")}
-                  </Link>
-                </li> */}
-                {/* <li className="mb-4">
-                  <Link
-                    href="/?nav=4"
-                    className="text-zinc-400 duration-700 hover:text-black   dark:hover:text-white"
-                  >
-                    {t("footer.element.col-1-4")}
-                  </Link>
-                </li> */}
-                <li>
-                  <Link
-                    href="/?nav=4"
-                    className="text-zinc-400 duration-700 hover:text-black   dark:hover:text-white"
-                  >
-                    {t("footer.element.col-1-5")}
-                  </Link>
-                </li>
-              </ul>
+              <div className="font-light text-gray-500 dark:text-gray-400" />
             </div>
             <div>
               <h2 className="m-[-1px] mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-white">
@@ -167,7 +123,7 @@ export function FooterWithSitemap() {
                 </li>
                 <li>
                   <a
-                    href="https://nextjs.org/blog/next-14"
+                    href="https://nextjs.org/blog/next-15"
                     target="_blank"
                     className="text-zinc-400 duration-700 hover:text-black dark:hover:text-white"
                   >

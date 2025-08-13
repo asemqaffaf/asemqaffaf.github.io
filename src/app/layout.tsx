@@ -8,12 +8,8 @@ import "../config/i18next";
 import dynamic from "next/dynamic";
 import { Inter } from "next/font/google";
 import LocalFont from "next/font/local";
-import { usePathname } from "next/navigation";
 import { appWithTranslation, useTranslation } from "next-i18next";
 import { Client, HydrationProvider } from "react-hydration-provider";
-
-import Footer from "../components/organisms/footer";
-import Nav from "../components/organisms/nav";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -28,7 +24,6 @@ const calSans = LocalFont({
 const DynamicHeader = dynamic(() => import("../components/organisms/header"));
 
 function RootLayout({ children }: { children: React.ReactNode }) {
-  const pathname = usePathname();
   const { i18n } = useTranslation();
 
   if (typeof window !== "undefined") {
@@ -48,13 +43,7 @@ function RootLayout({ children }: { children: React.ReactNode }) {
         <h1 className="hidden">Asem Qaffaf</h1>
         <h1 className="hidden">Full stack software engineer</h1>
         <HydrationProvider>
-          <Client>
-            <Nav />
-            <div className="flex flex-col ">
-              {children}
-              {pathname === "/" ? <div /> : <Footer />}
-            </div>
-          </Client>
+          <Client>{children}</Client>
         </HydrationProvider>
       </body>
     </html>

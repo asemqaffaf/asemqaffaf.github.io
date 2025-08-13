@@ -1,18 +1,18 @@
 const NewsSkeleton = () => {
   return (
-    <div className="w-full flex items-center">
+    <div className="flex w-full items-center">
       <div
         role="status"
-        className="w-full p-4  rounded shadow animate-pulse md:p-6 dark:border-gray-700"
+        className="w-full animate-pulse  rounded p-4 shadow md:p-6 dark:border-gray-700"
       >
         <div className="mb-4 h-2.5 w-48 rounded-full bg-gray-200 dark:bg-gray-700" />
-        <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 mb-2.5" />
-        <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 mb-2.5" />
-        <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700" />
+        <div className="mb-2.5 h-2 rounded-full bg-gray-200 dark:bg-gray-700" />
+        <div className="mb-2.5 h-2 rounded-full bg-gray-200 dark:bg-gray-700" />
+        <div className="h-2 rounded-full bg-gray-200 dark:bg-gray-700" />
 
-        <div className="flex h-48 w-5/6 md:w-2/4 items-center justify-center  my-4 bg-gray-300 rounded dark:bg-gray-700">
+        <div className="my-4 flex h-48 w-5/6 items-center justify-center  rounded bg-gray-300 md:w-2/4 dark:bg-gray-700">
           <svg
-            className="w-10 h-10 text-gray-200 dark:text-gray-600"
+            className="h-10 w-10 text-gray-200 dark:text-gray-600"
             aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
             fill="currentColor"
@@ -22,10 +22,10 @@ const NewsSkeleton = () => {
             <path d="M5 5V.13a2.96 2.96 0 0 0-1.293.749L.879 3.707A2.98 2.98 0 0 0 .13 5H5Z" />
           </svg>
         </div>
-        <div className="flex items-center mt-4">
+        <div className="mt-4 flex items-center">
           <div>
-            <div className="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-32 mb-2" />
-            <div className="w-48 h-2 bg-gray-200 rounded-full dark:bg-gray-700" />
+            <div className="mb-2 h-2.5 w-32 rounded-full bg-gray-200 dark:bg-gray-700" />
+            <div className="h-2 w-48 rounded-full bg-gray-200 dark:bg-gray-700" />
           </div>
         </div>
         <span className="sr-only">Loading...</span>

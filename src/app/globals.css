@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Import Inter font globally */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500&display=swap');
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -18,6 +21,8 @@
 
 body {
   color: rgb(var(--foreground-rgb));
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
 }
 
 .temporary-bounce {
