@@ -93,7 +93,7 @@ const Nav = ({
             type="button"
             data-dropdown-toggle="language-dropdown-menu"
             onClick={toggleLanguageMenu}
-            className="flex w-36 cursor-pointer items-center justify-center rounded-lg px-4 py-2 text-sm font-medium text-gray-700 transition-all duration-200 hover:bg-white/10 active:scale-95 dark:text-gray-200 dark:hover:bg-zinc-800/10"
+            className="hidden w-36 cursor-pointer items-center justify-center rounded-lg px-4 py-2 text-sm font-medium text-gray-700 transition-all duration-200 hover:bg-white/10 active:scale-95 md:flex dark:text-gray-200 dark:hover:bg-zinc-800/10"
           >
             <span className="mr-2 text-base">🌐</span>
             {languagesList.find((lang) => lang.value === i18n.language)?.name ||
