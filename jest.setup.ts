@@ -1,5 +1,7 @@
-// jest.setup.ts
-class IntersectionObserver {
+/* eslint-disable prettier/prettier */
+/* eslint-disable @typescript-eslint/lines-between-class-members */
+/* eslint-disable class-methods-use-this */
+class MockIntersectionObserver {
   observe() {}
   unobserve() {}
   disconnect() {}
@@ -8,11 +10,11 @@ class IntersectionObserver {
 Object.defineProperty(window, 'IntersectionObserver', {
   writable: true,
   configurable: true,
-  value: IntersectionObserver,
+  value: MockIntersectionObserver,
 });
 
 Object.defineProperty(global, 'IntersectionObserver', {
   writable: true,
   configurable: true,
-  value: IntersectionObserver,
+  value: MockIntersectionObserver,
 });
