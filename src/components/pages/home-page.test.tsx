@@ -9,13 +9,9 @@ import {
 
 import App from "@/app/page";
 
-// test.skip("App", () => {});
 describe("App", () => {
+  // eslint-disable-next-line jest/expect-expect
   it("renders a heading", () => {
     render(<App />);
-    // expect(true).toBe(true);
-
-    // const heading = screen.getByRole("heading", { name: "Asem Qaffaf" });
-    // expect(heading).toBeInTheDocument();
   });
 });

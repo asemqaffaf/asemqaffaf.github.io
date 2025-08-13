@@ -22,7 +22,7 @@ const nextConfig = {
     domains: ["https://media.wired.com/"],
   },
   compiler: {
-    removeConsole: true,
+    removeConsole: process.env.NODE_ENV === "production",
   },
 };
 

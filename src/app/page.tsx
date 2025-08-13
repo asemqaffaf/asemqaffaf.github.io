@@ -1,101 +1,128 @@
 "use client";
 
-import { useSearchParams } from "next/navigation";
-import type { RefObject } from "react";
-import React, { useEffect, useRef, useState } from "react";
-import ReactPageScroller from "react-page-scroller";
+import React, { useRef } from "react";
 
-import Footer from "../components/organisms/footer";
-// import Nav from "./components/organisms/nav";
-import About from "../components/pages/about";
-import Contact from "../components/pages/contact";
-import HomePage from "../components/pages/home-page";
-import Portfolio from "../components/pages/portfolio";
-import PortfolioSecondPage from "../components/pages/portfolio-second-page";
+import LazyLoadSection from "@/components/atoms/lazy-load-section";
+import Footer from "@/components/organisms/footer";
+import Nav from "@/components/organisms/nav";
+import About from "@/components/pages/about";
+import Contact from "@/components/pages/contact";
+import HomePage from "@/components/pages/home-page";
+import Portfolio from "@/components/pages/portfolio";
 
 export default function App(): React.JSX.Element {
-  const searchParams = useSearchParams();
-  const [currentScroll, setCurrentScroll] = useState<number>(0);
-
   const bannerRef = useRef<HTMLDivElement>(null);
   const aboutRef = useRef<HTMLDivElement>(null);
   const portfolioRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
 
-  const scrollIntoView = (ref: RefObject<HTMLDivElement>) => {
-    ref.current?.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-      inline: "nearest",
-    });
-  };
-
-  const getCustomPageNumber = () => {
-    const navNumber: string = searchParams?.get("nav") || "0";
-    return Number(navNumber > "2" ? 4 : navNumber) || 0;
-  };
-
-  useEffect(() => {
-    const pageNumber = getCustomPageNumber();
-    setCurrentScroll(pageNumber);
-
-    const navNumber = searchParams?.get("nav");
-
-    switch (navNumber) {
-      case "0":
-        scrollIntoView(bannerRef);
-        break;
-      case "1":
-        scrollIntoView(aboutRef);
-        break;
-      case "2":
-        scrollIntoView(portfolioRef);
-        break;
-      case "3":
-        scrollIntoView(contactRef);
-        break;
-
-      default:
-        break;
-    }
-  }, [searchParams]);
+  const sections = [
+    {
+      ref: bannerRef,
+      id: "home-main",
+      component: <HomePage />,
+      fullScreen: true,
+      offset: "translate-y-8 opacity-0",
+      delay: 0,
+      duration: "duration-1000",
+      threshold: 0.05,
+    },
+    {
+      ref: aboutRef,
+      id: "about-main",
+      component: <About />,
+      offset: "translate-y-6 opacity-0",
+      delay: 0,
+      duration: "duration-1000",
+      threshold: 0.05,
+    },
+    {
+      ref: portfolioRef,
+      id: "portfolio-main",
+      component: <Portfolio />,
+      offset: "translate-y-4 opacity-0",
+      delay: 0,
+      duration: "duration-800",
+      threshold: 0.05,
+    },
+    {
+      ref: contactRef,
+      id: "contact-main",
+      component: <Contact />,
+      offset: "translate-y-6 opacity-0",
+      delay: 0,
+      duration: "duration-1000",
+      threshold: 0.05,
+    },
+    {
+      id: "footer-main",
+      component: <Footer />,
+      offset: "translate-y-4 opacity-0",
+      delay: 0,
+      duration: "duration-800",
+      threshold: 0.1,
+    },
+  ];
 
   return (
     <>
-      <div className="flex w-screen flex-col lg:hidden">
-        <div ref={bannerRef} className="h-screen w-screen">
-          <HomePage />
-        </div>
-        <div ref={aboutRef} className="h-screen w-screen">
-          <About />
-        </div>
+      <Nav
+        bannerRef={bannerRef}
+        aboutRef={aboutRef}
+        portfolioRef={portfolioRef}
+        contactRef={contactRef}
+      />
 
-        <div ref={portfolioRef} id="portfolio-main" className="h-full w-screen">
-          <Portfolio />
-        </div>
-        <div ref={contactRef} id="contact-main" className="h-full w-screen">
-          <Contact />
-        </div>
-
-        <div
-          id="footer-main"
-          className="h-screen w-screen  bg-white dark:bg-zinc-800 sm:bg-transparent"
-        >
-          <Footer />
-        </div>
-      </div>
-      <div className="hidden w-screen lg:flex">
-        <ReactPageScroller
-          renderAllPagesOnFirstRender={false}
-          customPageNumber={currentScroll}
-        >
-          <HomePage />
-          <About />
-          <Portfolio />
-          <PortfolioSecondPage />
-          <Contact />
-          <Footer />
-        </ReactPageScroller>
+      {/* Mobile-optimized layout */}
+      <div
+        className="flex w-screen flex-col lg:snap-y lg:snap-mandatory lg:overflow-y-auto"
+        style={{
+          scrollBehavior: "smooth",
+          // Mobile performance optimizations
+          WebkitOverflowScrolling: "touch",
+          willChange: "scroll-position",
+        }}
+      >
+        {sections.map(
+          ({
+            ref,
+            id,
+            component,
+            fullScreen,
+            offset,
+            delay,
+            duration,
+            threshold,
+          }) => (
+            <section
+              key={id}
+              ref={ref as React.RefObject<HTMLElement>}
+              id={id}
+              className={`
+                ${fullScreen ? "h-screen" : "min-h-screen"}
+                ${fullScreen ? "lg:h-screen" : "lg:min-h-screen"}
+                ${fullScreen ? "w-screen" : ""}
+                relative
+                lg:snap-start
+              `}
+              style={{
+                // Mobile rendering optimizations
+                contain: "layout style",
+                // Prevent layout thrashing on mobile
+                minHeight: fullScreen ? "100vh" : "100vh",
+              }}
+            >
+              <LazyLoadSection
+                offset={offset}
+                delay={delay}
+                duration={duration}
+                threshold={threshold}
+              >
+                {component}
+              </LazyLoadSection>
+            </section>
+          ),
+        )}
       </div>
     </>
   );

@@ -22,22 +22,21 @@ export default function Contact() {
     (e.currentTarget.elements[1] as HTMLInputElement).value = "";
     (e.currentTarget.elements[2] as HTMLInputElement).value = "";
   };
+
   return (
-    <div className="h-full w-screen bg-white pt-24 dark:bg-gray-900 overflow-scroll">
-      <h1 className="hidden">Asem Qaffaf</h1>
-      <h1 className="hidden">Full stack software engineer</h1>
-      <section className="bg-white dark:bg-gray-900 h-full w-full overflow-scroll">
-        <div className="px-[20%] pb-4 ">
-          <h2 className="mb-4 text-center text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white">
+    <div className="overflow-scroll">
+      <section className="flex w-full justify-center px-4 sm:px-6 lg:px-8">
+        <div className="mb-3 mt-20 w-full max-w-3xl rounded-3xl border border-white/20 bg-white/10 p-8  backdrop-blur-xl transition-all duration-500  hover:border-white/40 hover:bg-white/20 hover:shadow-md dark:bg-zinc-900/40 dark:shadow-black/50 hover:dark:bg-zinc-900/20 hover:dark:shadow-black/40 ">
+          <h2 className="mb-6 bg-gradient-to-r bg-clip-text text-center text-5xl tracking-tight text-white">
             {t("page.contact.title")}
           </h2>
-          <p className="mb-8 text-center font-light text-gray-500 sm:text-xl lg:mb-16 dark:text-gray-400">
+          <p className="mb-10 text-center text-lg font-light  text-white/60 sm:text-xl">
             {t("page.contact.sub-title")}
           </p>
           <form onSubmit={submitContactForm} className="space-y-8">
             <div>
               <label
-                className="mb-2 block text-sm font-medium text-gray-900 dark:text-gray-300"
+                className="mb-3 block text-sm font-semibold text-white/90"
                 htmlFor="email"
               >
                 {t("page.contact.email")}
@@ -45,7 +44,7 @@ export default function Contact() {
               <input
                 type="email"
                 id="email"
-                className="focus:ring-primary-500 focus:border-primary-500 dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400"
+                className="w-full rounded-2xl border border-white/20 bg-white/5 px-5 py-4 text-base text-white shadow-inner backdrop-blur-sm transition-all duration-300 placeholder:text-white/50 focus:border-white/40 focus:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/20"
                 placeholder={t("page.contact.email-placeholder")}
                 required
               />
@@ -53,39 +52,37 @@ export default function Contact() {
             <div>
               <label
                 htmlFor="subject"
-                className="mb-2 block text-sm font-medium text-gray-900 dark:text-gray-300"
+                className="mb-3 block text-sm font-semibold text-white/90"
               >
                 {t("page.contact.subject")}
               </label>
               <input
                 type="text"
                 id="subject"
-                className="focus:ring-primary-500 focus:border-primary-500 dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light block w-full rounded-lg border border-gray-300 bg-gray-50 p-3 text-sm text-gray-900 shadow-sm dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400"
+                className="w-full rounded-2xl border border-white/20 bg-white/5 px-5 py-4 text-base text-white shadow-inner backdrop-blur-sm transition-all duration-300 placeholder:text-white/50 focus:border-white/40 focus:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/20"
                 placeholder={t("page.contact.subject-placeholder")}
                 required
               />
             </div>
-            <div className="sm:col-span-2">
+            <div>
               <label
                 htmlFor="message"
-                className="mb-2 block text-sm font-medium text-gray-900 dark:text-gray-400"
+                className="mb-3 block text-sm font-semibold text-white/90"
               >
                 {t("page.contact.your-message")}
               </label>
               <textarea
                 id="message"
                 rows={6}
-                className="focus:ring-primary-500 focus:border-primary-500 dark:focus:ring-primary-500 dark:focus:border-primary-500 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400"
+                className="w-full resize-none rounded-2xl border border-white/20 bg-white/5 px-5 py-4 text-base text-white shadow-inner backdrop-blur-sm transition-all duration-300 placeholder:text-white/50 focus:border-white/40 focus:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/20"
                 placeholder={t("page.contact.your-message-placeholder")}
               />
             </div>
             <button
               type="submit"
-              className="group relative mb-2 me-2 inline-flex items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-green-400 to-blue-600 p-0.5 text-sm font-medium text-gray-900 hover:text-white focus:outline-none focus:ring-4 focus:ring-green-200 group-hover:from-green-400 group-hover:to-blue-600 dark:text-white dark:focus:ring-green-800"
+              className="w-full rounded-2xl border border-white/30 bg-white/10 px-6 py-4 text-lg font-semibold  text-white shadow-lg backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] hover:border-white/50 hover:bg-white/20 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-white/30 active:scale-[0.98]"
             >
-              <span className="relative rounded-md bg-white px-5 py-2.5 transition-all duration-75 ease-in group-hover:bg-opacity-0 dark:bg-gray-900">
-                {t("page.contact.send-message")}
-              </span>
+              {t("page.contact.send-message")}
             </button>
           </form>
           <a

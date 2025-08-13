@@ -20,13 +20,16 @@ export default function LanguageList({
   };
 
   return (
-    <ul className="py-2 font-medium" role="none">
+    <ul
+      className="flex flex-col items-center justify-center px-6 py-2 font-medium"
+      role="none"
+    >
       {languagesList.map((lang) => (
         <li key={lang.value}>
           <button
             type="button"
             onClick={() => changeLanguage(lang.value)}
-            className="block w-full px-4 py-2 text-start text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
+            className="block w-24 px-4 py-2 text-start text-sm text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
             role="menuitem"
           >
             <div className="inline-flex items-center whitespace-nowrap">

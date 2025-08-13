@@ -7,11 +7,15 @@ import { FooterWithSitemap } from "@/components/molecules/footer-sitemap";
 import { typeWriteList } from "@/constants";
 
 const randomTypeWriteList = typeWriteList.sort(() => 0.5 - Math.random());
+
 export default function Footer() {
   return (
-    <div className="flex h-auto flex-col justify-center md:h-screen">
-      <div className="hidden h-2/6 w-full items-center sm:flex md:flex md:h-2/4 lg:h-2/4 ">
-        <div className="flex h-80 items-center justify-center text-4xl font-extralight text-zinc-100 sm:text-5xl md:text-4xl lg:text-8xl">
+    <div className="flex min-h-screen flex-col">
+      {/* Spacer to push footer to bottom */}
+      <div className="grow" />
+      {/* Typewriter Section - Now visible on mobile */}
+      <div className="flex h-48 w-full items-center justify-center bg-gradient-to-b from-gray-50 to-gray-100 px-4 py-8 sm:h-64 md:h-96 lg:h-80 dark:from-gray-900 dark:to-gray-800">
+        <div className="flex items-center justify-center text-center text-2xl font-extralight text-gray-400 sm:text-4xl md:text-5xl lg:text-8xl">
           <Typewriter
             options={{
               strings: randomTypeWriteList,
@@ -21,7 +25,9 @@ export default function Footer() {
           />
         </div>
       </div>
-      <div className="h-3/6 w-full md:h-3/4 lg:h-2/4 self-end">
+
+      {/* Footer Section */}
+      <div className="mt-auto w-full">
         <FooterWithSitemap />
       </div>
     </div>

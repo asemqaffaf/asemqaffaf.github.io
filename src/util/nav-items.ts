@@ -7,10 +7,10 @@ export const navigationElements = [
 ] as const;
 
 export const languagesList = [
-  { name: "🇺🇲 | English (US)", value: "en" },
-  { name: "🇯🇵 | 日本語", value: "jp" },
-  { name: "🇩🇪 | Deutsch", value: "de" },
-  { name: "🇸🇦 | العربيه", value: "ar" },
+  { name: "English", value: "en" },
+  { name: "日本語", value: "jp" },
+  { name: "Deutsch", value: "de" },
+  { name: "العربيه", value: "ar" },
 ] as const;
 
 export type LanguageType = (typeof languagesList)[number]["value"];

@@ -21,14 +21,14 @@ export default function Card({
   const [hover, setHover] = useState<boolean>(false);
 
   return (
-    <div className="card-body h-full">
+    <div className="card-body h-full ">
       <div
-        className="card-container h-3/4 w-[95svw] md:w-96"
+        className="card-container h-full w-[95svw] sm:w-80 md:w-96"
         onTouchCancel={() => setHover(false)}
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
       >
-        <div className="card-card flex items-center justify-center self-center bg-zinc-100  dark:border-gray-700 dark:bg-gray-800 ">
+        <div className="card-card flex items-center justify-center self-center border border-white/5 bg-white/5 shadow-2xl shadow-black/10 backdrop-blur-2xl duration-1000 dark:border-zinc-700/20 dark:bg-zinc-900/40 dark:shadow-black/50 ">
           <div
             className="flag"
             style={{
@@ -42,10 +42,6 @@ export default function Card({
             <Image
               width={50}
               height={50}
-              // objectFit="contains"
-              // fill
-              // objectFit=""
-              // content=""
               className="rounded-full"
               src={`${profilePic}`}
               alt={name}
@@ -53,11 +49,9 @@ export default function Card({
             />
           </div>
           <div className="card-contentBx">
-            <h2 className={`my-2 text-2xl ${hover ? "text-zinc-200" : ""} `}>
-              {name}
-            </h2>
-            <div className="card-size">
-              <p className="text-sm font-medium text-gray-800 flex sm:flex md:hidden lg:flex ">
+            <h2 className="my-2 text-2xl text-white">{name}</h2>
+            <div className="card-size mx-2 rounded-xl bg-transparent backdrop-blur-md">
+              <p className="mt-2 flex text-sm font-medium text-slate-800">
                 {brief}
               </p>
             </div>
