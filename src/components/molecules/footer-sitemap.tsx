@@ -1,7 +1,6 @@
 "use client";
 
 import {
-  faFacebookF,
   faGithub,
   faLinkedinIn,
   faXTwitter,
@@ -14,7 +13,7 @@ import { useTranslation } from "react-i18next";
 export function FooterWithSitemap() {
   const { t } = useTranslation();
   return (
-    <footer className="flex h-full w-full overflow-scroll bg-white lg:items-center dark:bg-zinc-800">
+    <footer className="flex w-full overflow-scroll bg-white lg:items-center dark:bg-zinc-800">
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8  ">
         <div className="items-center md:flex md:justify-between">
           <div className="mb-6 flex flex-col md:mb-0">
@@ -137,7 +136,7 @@ export function FooterWithSitemap() {
             © {new Date().getFullYear()} {t("footer.element.copyrights")}
           </span>
           <div className="mt-8 flex flex-row items-center sm:mt-0 sm:flex-row sm:items-start sm:justify-center ">
-            <a
+            {/* <a
               href="https://facebook.com/asemqaffaf"
               target="_blank"
               className="text-gray-500 duration-700 hover:text-gray-900 dark:hover:text-white"
@@ -147,7 +146,7 @@ export function FooterWithSitemap() {
                 icon={faFacebookF}
               />
               <span className="sr-only">Facebook page</span>
-            </a>
+            </a> */}
             <a
               href="https://www.linkedin.com/in/asem-qaffaf-75b541199/"
               target="_blank"

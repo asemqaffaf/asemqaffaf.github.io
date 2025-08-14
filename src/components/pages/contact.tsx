@@ -23,11 +23,11 @@ export default function Contact() {
     (e.currentTarget.elements[2] as HTMLInputElement).value = "";
   };
   return (
-    <div className="h-full w-screen overflow-scroll bg-gradient-to-b from-gray-50 to-gray-100 pt-24 dark:from-gray-900 dark:to-gray-800">
+    <div className=" overflow-scroll ">
       <h1 className="hidden">Asem Qaffaf</h1>
       <h1 className="hidden">Full stack software engineer</h1>
       <section className="flex w-full justify-center px-4 sm:px-6 lg:px-8">
-        <div className="w-full max-w-3xl rounded-2xl bg-white p-8 shadow-md transition-shadow duration-300 hover:shadow-lg dark:bg-gray-800 dark:shadow-gray-700">
+        <div className="w-full max-w-3xl mt-20 rounded-2xl bg-white p-8 shadow-md transition-shadow duration-300 hover:shadow-lg dark:bg-gray-800 dark:shadow-gray-700">
           <h2 className="mb-6 bg-gradient-to-r from-green-400 to-blue-600 bg-clip-text text-center text-5xl font-extrabold tracking-tight text-transparent">
             {t("page.contact.title")}
           </h2>
