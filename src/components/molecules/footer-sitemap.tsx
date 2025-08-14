@@ -83,7 +83,7 @@ export function FooterWithSitemap() {
                     {t("footer.element.col-2-2")}
                   </a>
                 </li>
-                <li>
+                {/* <li>
                   <a
                     href="https://facebook.com/asemqaffaf"
                     target="_blank"
@@ -91,7 +91,7 @@ export function FooterWithSitemap() {
                   >
                     {t("footer.element.col-2-3")}
                   </a>
-                </li>
+                </li> */}
               </ul>
             </div>
             <div>

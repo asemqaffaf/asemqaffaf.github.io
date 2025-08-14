@@ -9,9 +9,9 @@ export default function About() {
   const { t } = useTranslation();
 
   return (
-    <div className="flex min-h-screen w-full flex-col items-center justify-center gap-8 px-6 py-8 md:flex-row md:px-8 md:py-16">
+    <div className="flex min-h-screen w-full flex-col items-center justify-center gap-8 px-2 py-8 md:flex-row md:px-8 md:py-16">
       {/* Left side Card */}
-      <div className="flex h-[600px] min-h-[400px] w-full items-center justify-center md:h-[700px] md:min-h-[500px] md:w-2/5">
+      <div className="flex h-[600px] min-h-[400px] w-full items-center justify-center lg:h-[700px] lg:min-h-[500px] lg:w-2/5">
         <Card
           {...aboutMe}
           name={t("component.element.name")}
@@ -20,7 +20,7 @@ export default function About() {
       </div>
 
       {/* Right side glass panel */}
-      <div className="flex w-full justify-center md:w-3/5">
+      <div className="flex w-full justify-center lg:w-2/5 ">
         <div className="flex w-full flex-col rounded-xl border border-white/30 bg-white/10 shadow-lg backdrop-blur-lg backdrop-saturate-150 dark:border-white/10 dark:bg-white/5">
           {/* Title */}
           <div className="flex justify-center p-3">
