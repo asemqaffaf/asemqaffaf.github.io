@@ -50,10 +50,8 @@ export default function Card({
           </div>
           <div className="card-contentBx">
             <h2 className="my-2 text-2xl text-white">{name}</h2>
-            <div className="card-size">
-              <p className="flex bg-white/10 text-sm font-bold text-gray-800">
-                {brief}
-              </p>
+            <div className="card-size mx-2 rounded-xl bg-transparent backdrop-blur-sm">
+              <p className="flex text-sm font-bold text-gray-800">{brief}</p>
             </div>
             <div className="card-color">
               <p className="text-zinc-100">{lastWord}</p>

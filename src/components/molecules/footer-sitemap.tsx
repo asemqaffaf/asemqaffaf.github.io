@@ -24,7 +24,7 @@ export function FooterWithSitemap() {
             </Link>
 
             <a href="tel:+817092831954">
-              <div className="mt-4 mb-1 flex flex-col font-light text-gray-500 duration-700  hover:text-black dark:text-gray-400   dark:hover:text-white">
+              <div className="mb-1 mt-4 flex flex-col font-light text-gray-500 duration-700  hover:text-black dark:text-gray-400   dark:hover:text-white">
                 <span className=" mb-1">Tel: +81 70 9236 2347</span>
               </div>
             </a>

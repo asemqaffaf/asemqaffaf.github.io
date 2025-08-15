@@ -27,7 +27,7 @@ export default function Contact() {
       <h1 className="hidden">Asem Qaffaf</h1>
       <h1 className="hidden">Full stack software engineer</h1>
       <section className="flex w-full justify-center px-4 sm:px-6 lg:px-8">
-        <div className="w-full mb-3 max-w-3xl mt-20 rounded-2xl bg-white p-8 shadow-md transition-shadow duration-300 hover:shadow-lg dark:bg-gray-800 dark:shadow-gray-700">
+        <div className="mb-3 mt-20 w-full max-w-3xl rounded-2xl bg-white p-8 shadow-md transition-shadow duration-300 hover:shadow-lg dark:bg-gray-800 dark:shadow-gray-700">
           <h2 className="mb-6 bg-gradient-to-r from-green-400 to-blue-600 bg-clip-text text-center text-5xl font-extrabold tracking-tight text-transparent">
             {t("page.contact.title")}
           </h2>

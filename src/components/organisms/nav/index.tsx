@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable tailwindcss/no-custom-classname */
 import Image from "next/image";
-import { useCallback, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { languagesList, navigationElements } from "@/util/nav-items";
@@ -30,13 +30,17 @@ const Nav = ({
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // Map navigation elements to their corresponding refs
-  const sectionRefs = {
-    0: bannerRef, // Home/Banner
-    1: aboutRef, // About
-    2: portfolioRef, // Portfolio
-    3: contactRef, // Contact
-  };
+  const sectionRefs = useMemo(() => {
+    return {
+      0: bannerRef, // Home/Banner
+      1: aboutRef, // About
+      2: portfolioRef, // Portfolio
+      3: contactRef, // Contact
+    };
+  }, [bannerRef, aboutRef, portfolioRef, contactRef]);
 
+  // Function to scroll to a specific section
+  // Uses the sectionRefs to get the correct ref based on the index
   const scrollToSection = useCallback(
     (navNumber: number) => {
       const targetRef = sectionRefs[navNumber as keyof typeof sectionRefs];
@@ -191,7 +195,7 @@ const Nav = ({
               {navigationElements.map((item) => (
                 <li key={item.name}>
                   <button
-                    className="w-full rounded-lg px-4 py-3 text-left text-gray-700 transition-all duration-200 hover:bg-white/10 active:scale-95 touch-manipulation dark:text-gray-300 dark:hover:bg-zinc-800/10"
+                    className="w-full touch-manipulation rounded-lg px-4 py-3 text-left text-gray-700 transition-all duration-200 hover:bg-white/10 active:scale-95 dark:text-gray-300 dark:hover:bg-zinc-800/10"
                     type="button"
                     onClick={() => scrollToSection(item.index)}
                   >
