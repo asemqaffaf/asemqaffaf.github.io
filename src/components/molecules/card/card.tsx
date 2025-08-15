@@ -28,7 +28,7 @@ export default function Card({
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
       >
-        <div className="card-card flex items-center justify-center self-center bg-white/5 ">
+        <div className="card-card flex items-center justify-center self-center border border-white/5 bg-white/5 shadow-2xl shadow-black/10 backdrop-blur-2xl duration-1000 dark:border-zinc-700/20 dark:bg-zinc-900/40 dark:shadow-black/50 ">
           <div
             className="flag"
             style={{
@@ -49,9 +49,13 @@ export default function Card({
             />
           </div>
           <div className="card-contentBx">
-            <h2 className="my-2 text-2xl text-white">{name}</h2>
-            <div className="card-size mx-2 rounded-xl bg-transparent backdrop-blur-sm">
-              <p className="flex text-sm font-bold text-gray-800">{brief}</p>
+            <h2 className="my-2 text-2xl text-slate-800 dark:text-white">
+              {name}
+            </h2>
+            <div className="card-size mx-2 rounded-xl bg-transparent backdrop-blur-md">
+              <p className="mt-2 flex text-sm font-medium text-slate-800">
+                {brief}
+              </p>
             </div>
             <div className="card-color">
               <p className="text-zinc-100">{lastWord}</p>
