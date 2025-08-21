@@ -49,9 +49,7 @@ export default function Card({
             />
           </div>
           <div className="card-contentBx">
-            <h2 className="my-2 text-2xl text-slate-800 dark:text-white">
-              {name}
-            </h2>
+            <h2 className="my-2 text-2xl text-white">{name}</h2>
             <div className="card-size mx-2 rounded-xl bg-transparent backdrop-blur-md">
               <p className="mt-2 flex text-sm font-medium text-slate-800">
                 {brief}

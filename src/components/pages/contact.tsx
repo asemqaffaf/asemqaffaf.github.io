@@ -27,16 +27,16 @@ export default function Contact() {
     <div className="overflow-scroll">
       <section className="flex w-full justify-center px-4 sm:px-6 lg:px-8">
         <div className="mb-3 mt-20 w-full max-w-3xl rounded-3xl border border-white/20 bg-white/10 p-8  backdrop-blur-xl transition-all duration-500  hover:border-white/40 hover:bg-white/20 hover:shadow-md dark:bg-zinc-900/40 dark:shadow-black/50 hover:dark:bg-zinc-900/20 hover:dark:shadow-black/40 ">
-          <h2 className="mb-6 bg-gradient-to-r bg-clip-text text-center text-5xl tracking-tight text-slate-800 dark:text-white">
+          <h2 className="mb-6 bg-gradient-to-r bg-clip-text text-center text-5xl tracking-tight text-white">
             {t("page.contact.title")}
           </h2>
-          <p className="mb-10 text-center text-lg font-light text-slate-800 sm:text-xl dark:text-white/60">
+          <p className="mb-10 text-center text-lg font-light  text-white/60 sm:text-xl">
             {t("page.contact.sub-title")}
           </p>
           <form onSubmit={submitContactForm} className="space-y-8">
             <div>
               <label
-                className="mb-3 block text-sm font-semibold text-slate-800 dark:text-white/90"
+                className="mb-3 block text-sm font-semibold text-white/90"
                 htmlFor="email"
               >
                 {t("page.contact.email")}
@@ -52,7 +52,7 @@ export default function Contact() {
             <div>
               <label
                 htmlFor="subject"
-                className="mb-3 block text-sm font-semibold text-slate-800 dark:text-white/90"
+                className="mb-3 block text-sm font-semibold text-white/90"
               >
                 {t("page.contact.subject")}
               </label>
@@ -67,7 +67,7 @@ export default function Contact() {
             <div>
               <label
                 htmlFor="message"
-                className="mb-3 block text-sm font-semibold text-slate-800 dark:text-white/90"
+                className="mb-3 block text-sm font-semibold text-white/90"
               >
                 {t("page.contact.your-message")}
               </label>
@@ -80,7 +80,7 @@ export default function Contact() {
             </div>
             <button
               type="submit"
-              className="w-full rounded-2xl border border-white/30 bg-white/10 px-6 py-4 text-lg font-semibold text-transparent/80 shadow-lg backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] hover:border-white/50 hover:bg-white/20 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-white/30 active:scale-[0.98] dark:text-white"
+              className="w-full rounded-2xl border border-white/30 bg-white/10 px-6 py-4 text-lg font-semibold  text-white shadow-lg backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] hover:border-white/50 hover:bg-white/20 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-white/30 active:scale-[0.98]"
             >
               {t("page.contact.send-message")}
             </button>
