@@ -122,7 +122,7 @@ const Nav = ({
 
             {/* Desktop Language Dropdown */}
             {isLanguageMenuOpen && (
-              <div className="absolute right-0 top-16 z-50 hidden list-none divide-y divide-gray-100 rounded-xl border border-white/10 bg-white/80 text-base shadow-2xl backdrop-blur-2xl md:block dark:divide-zinc-700 dark:border-zinc-600/30 dark:bg-zinc-800/80">
+              <div className="absolute end-0 top-16 z-50 hidden list-none divide-y divide-gray-100 rounded-xl border border-white/10 bg-white/80 text-base shadow-2xl backdrop-blur-2xl md:block dark:divide-zinc-700 dark:border-zinc-600/30 dark:bg-zinc-800/80">
                 <LanguageList
                   setIsLanguageMenuOpen={setIsLanguageMenuOpen}
                   setIsMobileMenuOpen={setIsMobileMenuOpen}
